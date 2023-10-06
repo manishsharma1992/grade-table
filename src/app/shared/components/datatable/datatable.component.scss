@@ -1,0 +1,35 @@
+// @media only screen and (min-device-width: 800px) and (max-device-width: 480px) {
+//   .example-container {
+//     overflow: auto;
+//   }
+// }
+
+.example-container {
+  max-height: calc(100vh - 155px);
+  overflow: auto;
+}
+
+  
+  table {
+    width: 800px;
+  }
+  
+  td.mat-column-star {
+    width: 20px;
+    padding-right: 8px;
+  }
+  
+  th.mat-column-position, td.mat-column-position {
+    padding-left: 8px;
+  }
+
+  .mat-mdc-table-sticky {
+    background: rgb(236, 245, 30);
+    opacity: 1;
+  }
+
+  .mat-paginator-sticky {
+    bottom: 0px;
+    position: sticky;
+    z-index: 10;
+  }

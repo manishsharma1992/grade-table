@@ -1,0 +1,112 @@
+
+{
+    "headerName": [
+        {
+            "columnName": "SrNo",
+            "isSticky": true
+        },
+        {
+            "columnName": "Seat No",
+            "isSticky" : true
+        },
+        {
+            "columnName": "Absent",
+            "isSticky": true
+        },
+        {
+            "isSticky": false,
+            "columnName": "Questions",
+            "questions" : [
+                {
+                    "questionId": "1a2b3c",
+                    "question" : "Q1",
+                    "maxMarks" : 6
+                },
+                {
+                    "questionId": "4d5e6f",
+                    "question" : "Q2",
+                    "maxMarks" : 5
+                },
+                {
+                    "questionId": "7g8h9i",
+                    "question" : "Q3",
+                    "maxMarks" : 5
+                },
+                {
+                    "questionId": "0j1k2l",
+                    "question" : "Q4",
+                    "maxMarks" : 6
+                },
+                {
+                    "questionId": "3m4n5o",
+                    "question" : "Q5",
+                    "maxMarks" : 6
+                },
+                {
+                    "questionId": "6p7q8r",
+                    "question" : "Q6",
+                    "maxMarks" : 6
+                },
+                {
+                    "questionId": "9s0t1u",
+                    "question" : "Q7",
+                    "maxMarks" : 8
+                },
+                {
+                    "questionId": "2v3w4x",
+                    "question" : "Q8",
+                    "maxMarks" : 8
+                },
+                {
+                    "questionId": "5y6z7a",
+                    "question" : "Q9",
+                    "maxMarks" : 10
+                },
+                {
+                    "questionId": "8b9b10",
+                    "question" : "Q10",
+                    "maxMarks" : 10
+                    
+                }
+            ]
+        },
+        {
+            "columnName": "Remarks (If Any)",
+            "isSticky" : false
+        },
+        {
+            "columnName": "Action",
+            "isSticky": false
+        }
+    ],
+    "dataRows" : [
+        {
+            "studentId": "1234qwert567ty",
+            "seatNo" : "1a2b3c298475htksueyroamdr",
+            "absent" : false,
+            "marksObtained" : [
+                2, 3, 2, 5, 4, 6, 6, 5, 7, 8 
+            ],
+            "remarks" : "Hello this is Dummy Data testing 1"
+        },
+        {
+            "studentId": "678rtyu78njkcv",
+            "seatNo" : "4d5e6f2iurjfh98hfnrt75839",
+            "absent" : false,
+            
+            "marksObtained" : [
+                2, 3, 2, 5, 5, 6, 7, 8, 8, 8 
+            ],
+            "remarks" : "Hello this is Dummy Data testing 2"
+        },
+        {
+            "studentId": "1234mjnbhgvhjklkj890899",
+            "seatNo" : "7g8h9iury678eyrtgfbtu673h",
+            "absent" : true,
+            "marksObtained" : [
+                2, 3, 2, 5, 4, 6, 6, 5, 7, 8 
+            ],
+            "remarks" : "Hello this is Dummy Data testing 3"
+        }
+    ]
+}

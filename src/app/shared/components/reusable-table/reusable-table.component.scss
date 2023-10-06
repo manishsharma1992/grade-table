@@ -1,0 +1,108 @@
+.example-container {
+    height: 400px;
+    width: 550px;
+    max-width: 100%;
+    overflow: auto;
+  }
+  
+  table {
+    width: 40rem;
+  }
+  
+  td.mat-column-star {
+    width: 20px;
+    padding-right: 8px;
+  }
+  
+  th.mat-column-position, td.mat-column-position {
+    padding-left: 8px;
+  }
+  
+  .mat-mdc-table-sticky-border-elem-right {
+    border-left: 1px solid #e0e0e0;
+  }
+  
+  .mat-mdc-table-sticky-border-elem-left {
+    border-right: 1px solid #e0e0e0;
+  }
+
+  :host ::ng-deep .mat-mdc-table {
+    white-space: nowrap;
+  }
+
+/* Add this CSS to your stylesheet */
+.mat-header-cell.sticky,
+.mat-cell.sticky {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background-color: white; /* Adjust the background color as needed */
+}
+  
+  
+
+// New CSS for the custom table
+.custom-table {
+  overflow-x: auto;
+  max-height: 400px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;
+
+}
+
+thead th {
+  background: #f8fafc;
+  color: #323232;
+}
+
+.sticky {
+  position: sticky;
+  color: #323232;
+  z-index: 1;
+  background: #f8fafc;
+
+}
+
+.sticky:first-child {
+  left: 0;
+}
+
+.sticky:nth-child(2) {
+  left: 50px; /* Adjust this value based on your column width */
+}
+
+.sticky:nth-child(3) {
+  left: 254px; /* Adjust this value based on your column width */
+}
+
+.view-btn {
+  color: var(--link-color);
+  text-align: center;
+  background: transparent;
+  padding: 4px 6px;
+  font-feature-settings: 'clig' off, 'liga' off;
+  font-family: Noto Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.25px;
+  border: unset;
+  border-radius: 8px;
+
+  &:hover {
+      background: #ceddf0 !important;
+  }
+}
