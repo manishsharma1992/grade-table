@@ -2,58 +2,100 @@
   "columns": [{
       "colDisplayValue": "Student Id",
       "colValue": "studentId",
+      "colDataType": "number",
+      "isEditable": "false",
+      "isHidden": true,
       "isSticky": true
   },{
     "colDisplayValue": "Seat No",
     "colValue": "seatNo",
+    "colDataType": "number",
+    "isEditable": "false",
+    "isHidden": false,
     "isSticky": true
   },{
     "colDisplayValue": "Absent",
     "colValue": "absent",
+    "colDataType": "string",
+    "isEditable": "false",
+    "isHidden": false,
     "isSticky": true
   },{
     "colDisplayValue": "Question #1 | 5",
     "colValue": "q1",
+    "colDataType": "list",
+    "isEditable": "true",
+    "isHidden": false,
     "isSticky": false
   },{
     "colDisplayValue": "Question #2 | 5",
     "colValue": "q2",
+    "colDataType": "list",
+    "isEditable": "true",
+    "isHidden": false,
     "isSticky": false
   },{
     "colDisplayValue": "Question #3 | 5",
     "colValue": "q3",
+    "colDataType": "list",
+    "isEditable": "true",
+    "isHidden": false,
     "isSticky": false
   },{
     "colDisplayValue": "Question #4 | 8",
     "colValue": "q4",
+    "colDataType": "list",
+    "isEditable": "true",
+    "isHidden": false,
     "isSticky": false
   },{
     "colDisplayValue": "Question #5 | 6",
     "colValue": "q5",
+    "colDataType": "list",
+    "isEditable": "true",
+    "isHidden": false,
     "isSticky": false
   },{
     "colDisplayValue": "Question #6 | 9",
     "colValue": "q6",
+    "colDataType": "list",
+    "isEditable": "true",
+    "isHidden": false,
     "isSticky": false
   },{
     "colDisplayValue": "Question #7 | 10",
     "colValue": "q7",
+    "colDataType": "list",
+    "isEditable": "true",
+    "isHidden": false,
     "isSticky": false
   },{
     "colDisplayValue": "Question #8 | 15",
     "colValue": "q8",
+    "colDataType": "list",
+    "isEditable": "true",
+    "isHidden": false,
     "isSticky": false
   },{
     "colDisplayValue": "Question #9 | 13",
     "colValue": "q9",
+    "colDataType": "list",
+    "isEditable": "true",
+    "isHidden": false,
     "isSticky": false
   },{
     "colDisplayValue": "Question #10 | 20",
     "colValue": "q10",
+    "colDataType": "list",
+    "isEditable": "true",
+    "isHidden": false,
     "isSticky": false
   },{
     "colDisplayValue": "Remarks",
     "colValue": "remarks",
+    "colDataType": "string",
+    "isEditable": "true",
+    "isHidden": false,
     "isSticky": false
   }],
   "data": [

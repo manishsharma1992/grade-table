@@ -34,7 +34,7 @@ export class DatatableComponent implements OnChanges {
     
     this.gridForm = this.formBuilder.group({
       gridRows: this.formBuilder.array(this.datasource.map((ele: any) => this.createGridFormGroup(ele)))
-    })
+    });
     this.gridData = new MatTableDataSource<any>((this.gridForm.get('gridRows') as FormArray).controls);
     this.gridData.paginator = this.paginator;
   }
@@ -47,6 +47,38 @@ export class DatatableComponent implements OnChanges {
           formGroup[key] = new FormControl(value);
     }
     return this.formBuilder.group(formGroup);
+  }
+
+  getGridFormDropdownList(column: any): any[] {
+    const colDisplayValue = column.colDisplayValue as string;
+    const pipeIdx = colDisplayValue.indexOf('|');
+    const dropdownData: number[] = [];
+    if(pipeIdx && pipeIdx > -1) {
+      const arrayLimit = Number(colDisplayValue.substring(pipeIdx + 1, colDisplayValue.length).trim());
+      for(let i = 1; i <= arrayLimit; i++) {
+        dropdownData.push(i);
+      }
+    }
+    return dropdownData;
+  }
+
+  editGridForm(gridFormElement: any, i: number) {
+
+    // VOFormElement.get('VORows').at(i).get('name').disabled(false)
+    gridFormElement.get('gridRows').at(i).get('isEditable').patchValue(false);
+    // this.isEditableNew = true;
+
+  }
+
+  // On click of correct button in table (after click on edit) this method will call
+  saveGridFrom(gridFormElement: any, i: number) {
+    // alert('SaveVO')
+    gridFormElement.get('gridRows').at(i).get('isEditable').patchValue(true);
+  }
+
+  // On click of cancel button in the table (after click on edit) this method will call and reset the previous data
+  cancelGridForm(gridFormElement: any, i: number) {
+    gridFormElement.get('gridRows').at(i).get('isEditable').patchValue(true);
   }
 
 

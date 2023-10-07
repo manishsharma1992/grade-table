@@ -20,12 +20,15 @@
                             </button>
 
                             <button mat-icon-button class="material-icons app-toolbar-menu save-button"
-                                matTooltip="Edit" color="primary">
+                                matTooltip="Edit" color="primary"
+                                *ngIf="gridForm.get('gridRows')?.value[i].isEditable"
+                                (click)="editGridForm(gridForm, i)">
                                 <mat-icon>edit</mat-icon>
                             </button>
 
                             <button mat-icon-button class="material-icons app-toolbar-menu delete-button"
-                                matTooltip="Delete" color="warn">
+                                matTooltip="Delete" color="warn"
+                                *ngIf="gridForm.get('gridRows')?.value[i].isEditable">
                                 <mat-icon>delete</mat-icon>
                             </button>
                         </td>
@@ -35,24 +38,61 @@
                             <ng-container matColumnDef="{{column.colValue}}" [sticky]="true">
                                 <th mat-header-cell *matHeaderCellDef>{{column.colDisplayValue}}</th>
                                 <td mat-cell *matCellDef="let element; let i = index" [formGroup]="element">
-                                    <mat-form-field appearance="outline">
-                                        <input matInput  type="text"
-                                            formControlName="{{column.colValue}}" [readonly]="true"
-                                            placeholder="{{column.colValue}}" />
-                                    </mat-form-field>
-
+                                    <ng-container *ngIf="!column.isEditable; else editableField">
+                                        <mat-form-field appearance="outline">
+                                            <input matInput  type="text"
+                                                formControlName="{{column.colValue}}" [readonly]="true"
+                                                placeholder="{{column.colValue}}" />
+                                        </mat-form-field>
+                                    </ng-container>
+                                    <ng-template #editableField>
+                                        <ng-container *ngIf="column.colDataType !== 'list'; else editableComboboxField">
+                                            <mat-form-field appearance="outline">
+                                                <input matInput type="text"
+                                                    formControlName="{{column.colValue}}"
+                                                    placeholder="{{column.colValue}}" />
+                                            </mat-form-field>
+                                        </ng-container>
+                                        <ng-template #editableComboboxField>
+                                            <mat-form-field appearance="outline">
+                                                <mat-select formControlName="{{column.colValue}}">
+                                                    <ng-container *ngFor="let item of getGridFormDropdownList(column)"></ng-container>
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </ng-template>
+                                    </ng-template>
                                 </td>
                             </ng-container>
                         </ng-container>
                         <ng-template #displayNormalColumn>
                             <ng-container matColumnDef="{{column.colValue}}">
                                 <th mat-header-cell *matHeaderCellDef>{{column.colDisplayValue}}</th>
-                                <td mat-cell *matCellDef="let element" [formGroup]="element">
-                                    <mat-form-field appearance="outline">
-                                        <input matInput type="text"
-                                            formControlName="{{column.colValue}}" [readonly]="true"
-                                            placeholder="{{column.colValue}}" />
-                                    </mat-form-field>
+                                <td mat-cell *matCellDef="let element; let i = index" [formGroup]="element">
+                                    <ng-container *ngIf="!column.isEditable; else editableField">
+                                        <mat-form-field appearance="outline">
+                                            <input matInput  type="text"
+                                                formControlName="{{column.colValue}}" [readonly]="true"
+                                                placeholder="{{column.colValue}}" />
+                                        </mat-form-field>
+                                    </ng-container>
+                                    <ng-template #editableField>
+                                        <ng-container *ngIf="column.colDataType !== 'list'; else editableComboboxField">
+                                            <mat-form-field appearance="outline">
+                                                <input matInput type="text"
+                                                    formControlName="{{column.colValue}}"
+                                                    placeholder="{{column.colValue}}" />
+                                            </mat-form-field>
+                                        </ng-container>
+                                        <ng-template #editableComboboxField>
+                                            <mat-form-field appearance="outline">
+                                                <mat-select formControlName="{{column.colValue}}">
+                                                    <ng-container *ngFor="let item of getGridFormDropdownList(column)">
+                                                        <mat-option value="item">{{item}}</mat-option>
+                                                    </ng-container>
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </ng-template>
+                                    </ng-template>
                                 </td>
                             </ng-container>
                         </ng-template>

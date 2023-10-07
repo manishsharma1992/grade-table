@@ -28,8 +28,20 @@
     opacity: 1;
   }
 
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: rgb(255, 255, 255);
+    /* background-color: white; */
+  }
+
   .mat-paginator-sticky {
     bottom: 0px;
     position: sticky;
     z-index: 10;
   }
+
+  .mat-footer-row,
+.mat-header-row,
+.mat-row {
+    display: inline-flex;
+    min-width: 100%;
+}
