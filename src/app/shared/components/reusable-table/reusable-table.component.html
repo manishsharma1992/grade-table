@@ -1,157 +1,118 @@
-<!-- <section class="example-container mat-elevation-z8" tabindex="0">
-    <h1>{{title}}</h1>
-    <table mat-table [dataSource]="datasource1" class="mat-elevation-z8">
-        <ng-container *ngFor="let column of columns1">
-            <ng-container *ngIf="column.isSticky; else displayNormalColumn">
-                <ng-container matColumnDef="{{column.columnName}}" [sticky]="true">
-                    <ng-container *ngIf="column.columnName !== 'Questions';">
-                        <th mat-header-cell *matHeaderCellDef>{{column.columnName}}</th>
-                    </ng-container>
-                    <ng-container *ngIf="column.columnName === 'SrNo'">
-                        <td mat-cell *matCellDef="let element; let i = index">{{i + 1}}</td>
-                    </ng-container>
-                    <ng-container *ngIf="column.columnName === 'Seat No'">
-                        <td mat-cell *matCellDef="let element; let i = index">{{element.seatNo}}</td>
-                    </ng-container>
-                    <ng-container *ngIf="column.columnName === 'Absent'">
-                        <td mat-cell *matCellDef="let element; let i = index">
-                            <section class="example-section">
-                                <mat-checkbox class="example-margin"></mat-checkbox>
-                            </section>
-                        </td>
-                    </ng-container>
-                </ng-container>
-            </ng-container>
-            <ng-template #displayNormalColumn>
-                <ng-container matColumnDef="{{column.columnName}}">
-                    <ng-container *ngIf="column.columnName !== 'Questions'; else displayQuestionColumn">
-                        <th mat-header-cell *matHeaderCellDef>{{column.columnName}}</th>
-                    </ng-container>
-                    <ng-template #displayQuestionColumn>
-                        <ng-container *matHeaderCellDef>
-                            <th mat-header-cell *ngFor="let question of column.questions; let last = last">
-                                <div style="width: 100px; white-space: nowrap;">{{ question.question }} | {{
-                                    question.maxMarks }} M</div>
-                            </th>
-                            <ng-container *ngFor="let question of row.marksObtained; let last = last">
-                                <td>{{ question }}</td>
-                            </ng-container>
-
-                        </ng-container>
-                    </ng-template>
-
-                    <ng-container *ngIf="column.columnName === 'Remarks'">
-                        <td mat-cell *matCellDef="let element; let i = index">{{element.remarks}}</td>
-                    </ng-container>
-                    <ng-container *ngIf="column.columnName === 'Action'">
-                        <td mat-cell *matCellDef="let element; let i = index">Submit</td>
-                    </ng-container>
-                </ng-container>
-            </ng-template>
-
-        </ng-container>
-        <tr mat-header-row *matHeaderRowDef="colValues1"></tr>
-        <tr mat-row *matRowDef="let row; columns: colValues1;"></tr>
-    </table>
-</section> -->
-
-<!-- <section>
-    <div class="custom-table">
-        <table>
-            <thead>
-                <tr>
-                    <ng-container *ngFor="let column of columns1; let i = index">
-                        <th *ngIf="column.columnName !== 'Questions'" [class]="i < 3 ? 'sticky' : ''">
-                            {{ column.columnName }}
-                        </th>
-                        <ng-container *ngIf="column.columnName === 'Questions'">
-                            <ng-container *ngFor="let question of column.questions">
-                                <th>{{ question.question }} | {{ question.maxMarks }} M</th>
-                            </ng-container>
-                        </ng-container>
-                    </ng-container>
-                </tr>
-            </thead>
-            <tbody>
-                <ng-container *ngFor="let row of datasource1; let i= index;">
-                    <tr>
-                        <td *ngIf="columns1[0].isSticky" class="sticky">{{ i + 1 }}</td>
-                        <td *ngIf="columns1[1].isSticky" class="sticky">{{ row.seatNo }}</td>
-                        <td *ngIf="columns1[2].isSticky" class="sticky">
-                            <mat-checkbox></mat-checkbox>
-                        </td>
-                        <ng-container *ngFor="let question of row.marksObtained; let last = last">
-                            <td>{{ question }}</td>
-                        </ng-container>
-                        <td>
-
-                        </td>
-                        <td>Submit</td>
-                    </tr>
-                </ng-container>
-            </tbody>
+<div class="mat-elevation-z8">
+    <button><mat-icon (click)="AddNewRow()" class="add-button">add_box</mat-icon></button>
+    <br />
+    <mat-form-field style="width: 40%">
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+    </mat-form-field>
+    <mat-form-field style="width: 20%; float: right;">
+      <mat-label>Go to Page</mat-label>
+      <input matInput type="number" placeholder="Enter page number" [(ngModel)]="pageNumber" (ngModelChange)="goToPage()">
+    </mat-form-field>
+    <form [formGroup]="VOForm" autocomplete="off">
+      <ng-container formArrayName="VORows">
+        <table #table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+          <!-- Position Column -->
+          <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element; let i = index" [formGroup]="element">
+              <mat-form-field style="width: 70px;" appearance="fill">
+                <input matInput type="text" formControlName="position" [readonly]="true" placeholder="position">
+              </mat-form-field>
+          </ng-container>
+  
+          <!-- Name Column -->
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element; let i = index" [formGroup]="element">
+  
+              <!-- <span [hidden]="VOForm.get('VORows').value[i].isEditable"> -->
+              <mat-form-field style="width: 70px;"
+                [appearance]="VOForm.get('VORows')?.value[i].isEditable? 'fill' : 'outline'">
+                <input matInput placeholder="name" type="text" formControlName="name" [readonly]="VOForm.get('VORows')?.value[i].isEditable">
+              </mat-form-field>
+              <!-- </span> -->
+  
+            </td>
+          </ng-container>
+  
+          <!-- Weight Column -->
+          <ng-container matColumnDef="weight">
+            <th mat-header-cell *matHeaderCellDef> Weight </th>
+            <td mat-cell *matCellDef="let element; let i = index" [formGroup]="element">
+              <!-- [appearance]="true ? 'outline': 'fill'" -->
+              <!-- <span [hidden]="VOForm.get('VORows').value[i].isEditable"> -->
+              <mat-form-field style="width: 70px;"
+                [appearance]="VOForm.get('VORows')?.value[i].isEditable? 'fill' : 'outline'">
+                <input matInput placeholder="weight" formControlName="weight" [readonly]="VOForm.get('VORows')?.value[i].isEditable">
+              </mat-form-field>
+              <!-- </span> -->
+            </td>
+          </ng-container>
+  
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="symbol">
+            <th mat-header-cell *matHeaderCellDef> Symbol </th>
+            <td mat-cell *matCellDef="let element; let i = index" [formGroup]="element">
+              <!-- <span [hidden]="VOForm.get('VORows').value[i].isEditable"> -->
+              <mat-form-field style="width: 70px;"
+                [appearance]="VOForm.get('VORows')?.value[i].isEditable? 'fill' : 'outline'">
+                <input matInput placeholder="text" type="text" formControlName="symbol" [readonly]="VOForm.get('VORows')?.value[i].isEditable">
+              </mat-form-field>
+              <!-- </span> -->
+            </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef> Action </th>
+            <td mat-cell *matCellDef="let element; let i = index" [formGroup]="element">
+              <button mat-icon-button class="material-icons app-toolbar-menu save-button"
+                                      matTooltip="Save Changes" (click)="SaveVO(VOForm,i)"
+                                      *ngIf="!VOForm.get('VORows')?.value[i].isEditable" color="primary">
+                                      <mat-icon>check_circle</mat-icon>
+                                  </button>
+  
+              <button mat-icon-button class="material-icons app-toolbar-menu cancel-button"
+                                      matTooltip="Cancel Changes" color="warn"
+                                      (click)="CancelSVO(VOForm,i)"
+                                      *ngIf="!VOForm.get('VORows')?.value[i].isEditable">
+                                      <mat-icon>cancel</mat-icon>
+                                  </button>
+  
+              <button mat-icon-button class="material-icons app-toolbar-menu save-button"
+                                      *ngIf="VOForm.get('VORows')?.value[i].isEditable"
+                                      matTooltip="Edit" color="primary" (click)="EditSVO(VOForm,i)">
+                                      <mat-icon>edit</mat-icon>
+                                  </button>
+  
+              <button mat-icon-button class="material-icons app-toolbar-menu delete-button"
+                                      *ngIf="VOForm.get('VORows')?.value[i].isEditable"
+                                      matTooltip="Delete" color="warn">
+                                      <mat-icon>delete</mat-icon>
+                                  </button>
+            </td>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+          <!-- Row shown when there is no matching data. -->
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+          </tr>
         </table>
-    </div>
-</section> -->
-
-<!-- <section>
-    <div class="custom-table">
-        <form action="" [formGroup]="studentsMarksForm">
-
-            <table>
-                <thead>
-                    <tr>
-                        <ng-container *ngFor="let column of columns1; let i = index">
-                            <th *ngIf="column.columnName !== 'Questions'" [class]="i < 3 ? 'sticky' : ''">
-                                {{ column.columnName }}
-                            </th>
-                            <ng-container *ngIf="column.columnName === 'Questions'">
-                                <ng-container *ngFor="let question of column.questions">
-                                    <th>{{ question.question }} | {{ question.maxMarks }} M</th>
-                                </ng-container>
-                            </ng-container>
-                        </ng-container>
-                    </tr>
-                </thead>
-                <tbody formArrayName="studentDetailsRow">
-                    <ng-container *ngFor="let row of datasource1; let i= index;">
-                        <tr *ngFor="let control of studentDetailsRowControls(); last as isLast">
-                            <ng-container [formGroupName]="i">
-                                <td *ngIf="columns1[0].isSticky" class="sticky">{{ i + 1 }}</td>
-                                <td *ngIf="columns1[1].isSticky" class="sticky" formControlName="studentSeatNo">{{ row.seatNo }}</td>
-                                <td *ngIf="columns1[2].isSticky" class="sticky" formControlName="studentPresent">
-                                    <mat-checkbox></mat-checkbox>
-                                </td>
-                                <ng-container *ngFor="let question of row.marksObtained">
-                                    <ng-container formArrayName="studentMarks" >
-                                        <ng-container *ngFor="let control1 of studentMarks(i); let j = index;">
-                                            <td [formGroupName]="j">
-                                                <mat-form-field appearance="outline" class="outline-form level">
-                                                    <mat-select formControlName="level" placeholder="--">
-                                                        <mat-option value="{{data}}" *ngFor="let data of maxMarks;">
-                                                            {{data}}</mat-option>
-                                                    </mat-select>
-                                                </mat-form-field>
-                                            </td>
-                                        </ng-container>
-                                    </ng-container>
-                                </ng-container>
-                                <td>
-                                    <mat-form-field appearance="outline" class="outcome-field"
-                                    style="width: 100% !important;">
-                                    <mat-label class="label-align">Remarks</mat-label>
-                                    <textarea formControlName="studentRemarks" matInput></textarea>
-                                </mat-form-field>
-                                </td>
-                                <td>
-                                    <button class="view-btn">Submit</button>
-                                </td>
-                            </ng-container>
-
-                        </tr>
-                    </ng-container>
-                </tbody>
-            </table>
-        </form>
-    </div>
-</section> -->
+      </ng-container>
+    </form>
+    <mat-card *ngIf="isLoading" style="display: flex; justify-content: center; align-items: center">
+    <mat-progress-spinner 
+      color="primary" 
+      mode="indeterminate">
+    </mat-progress-spinner>
+  </mat-card>
+  
+    <!-- <mat-paginator-goto [length]="100" [pageIndex]="0" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"
+          (page)="paginationChange($event)"></mat-paginator-goto> -->
+    <mat-paginator [pageSizeOptions]="[5, 10, 15 ]" showFirstLastButtons>
+    </mat-paginator>
+  </div>

@@ -34,53 +34,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class ReusableTableComponent implements OnInit {
 
-  // @Input() datasource1: any[] = [];
-  // @Input() columns1!: any[];
-  // @Input() title: string = "";
-  // @ViewChild('scrollContainer') scrollContainer !: ElementRef;
-
-  // studentsMarksForm !: FormGroup;
-  // studentDetailsRow !: FormArray;
-
-  // maxMarks= []
-
-
-  // colValues1: any[] = []; //
-
-  // constructor(
-  //   private fb: FormBuilder
-  // ) {
-  //   this.studentsMarksForm = this.fb.group({
-  //     studentDetailsRow: this.fb.array([]), // Make sure it's a FormArray
-  //   });
-  // }
-
-  
-  // ngOnChanges(changes: SimpleChanges): void {
-  //   this.datasource1 = changes['datasource1'].currentValue;
-  //   this.columns1 = changes['columns1'].currentValue;
-  //   this.columns1.forEach(column => {
-  //     this.colValues1 = [...this.colValues1, column.columnName]
-  //   });
-  // }
-
-  // Group(): FormGroup {
-  //   return this.fb.group({
-  //     studentSeatNo: new FormControl(''),
-  //     studentPresent: new FormControl(''),
-  //     studentAssignedMarks: new FormArray([]),
-  //     studentRemarks: new FormControl(''),
-  //   })
-  // }
-
-  // studentDetailsRowControls () {
-  //   return (this.studentDetailsRow = this.studentsMarksForm.get('studentDetailsRow') as FormArray).controls;
-  // }
-
-  // studentMarks (index: any): FormArray {
-  //   return (this.studentDetailsRowControls()[index] as FormGroup).get('studentMarks') as FormArray;
-  // }
-
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'action'];
  dataSource = new MatTableDataSource<any>();
@@ -88,7 +41,7 @@ export class ReusableTableComponent implements OnInit {
 isLoading = true;
 
 pageNumber: number = 1;
-  VOForm !: FormGroup;
+  VOForm!: FormGroup;
   isEditableNew: boolean = true;
   constructor(
     private fb: FormBuilder,
@@ -111,6 +64,7 @@ pageNumber: number = 1;
               })
               )) //end of fb array
             }); // end of form group cretation
+    console.log(this.VOForm.get('VORows')?.value);
     this.isLoading = false;
     this.dataSource = new MatTableDataSource((this.VOForm.get('VORows') as FormArray).controls);
     this.dataSource.paginator = this.paginator;
@@ -125,7 +79,7 @@ pageNumber: number = 1;
     //   data.name.trim().toLowerCase().indexOf(filterValue) !== -1;
   }
 
-  @ViewChild(MatPaginator) paginator !: MatPaginator;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
 goToPage() {
     this.paginator.pageIndex = this.pageNumber - 1;
@@ -166,7 +120,7 @@ goToPage() {
   }
 
   // this function will enabled the select field for editd
-  EditSVO(VOFormElement: any, i: any) {
+  EditSVO(VOFormElement: any, i:number) {
 
     // VOFormElement.get('VORows').at(i).get('name').disabled(false)
     VOFormElement.get('VORows').at(i).get('isEditable').patchValue(false);
@@ -175,21 +129,21 @@ goToPage() {
   }
 
   // On click of correct button in table (after click on edit) this method will call
-  SaveVO(VOFormElement: any, i: any) {
+  SaveVO(VOFormElement: any, i: number) {
     // alert('SaveVO')
     VOFormElement.get('VORows').at(i).get('isEditable').patchValue(true);
   }
 
   // On click of cancel button in the table (after click on edit) this method will call and reset the previous data
-  CancelSVO(VOFormElement: any, i: any) {
+  CancelSVO(VOFormElement: any, i: number) {
     VOFormElement.get('VORows').at(i).get('isEditable').patchValue(true);
   }
 
 
-paginatorList !: HTMLCollectionOf<Element>;
-idx !: number;
+paginatorList!: HTMLCollectionOf<Element>;
+idx!: number;
 onPaginateChange(paginator: MatPaginator, list: HTMLCollectionOf<Element>) {
-     setTimeout((idx: any) => {
+     setTimeout((idx: number) => {
          let from = (paginator.pageSize * paginator.pageIndex) + 1;
 
          let to = (paginator.length < paginator.pageSize * (paginator.pageIndex + 1))
@@ -219,7 +173,6 @@ onPaginateChange(paginator: MatPaginator, list: HTMLCollectionOf<Element>) {
                 isNewRow: new FormControl(true),
     });
   }
-
 
 
 }

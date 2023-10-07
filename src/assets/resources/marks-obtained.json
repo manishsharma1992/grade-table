@@ -1,6 +1,6 @@
 {
   "columns": [{
-      "colDisplayValue": "StudentId",
+      "colDisplayValue": "Student Id",
       "colValue": "studentId",
       "isSticky": true
   },{

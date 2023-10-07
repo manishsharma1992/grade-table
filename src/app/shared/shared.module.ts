@@ -5,6 +5,7 @@ import { MaterialImportModule } from '../material-import/material-import.module'
 import { ReusableTableComponent } from './components/reusable-table/reusable-table.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
+import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
 
 
 
@@ -23,6 +24,9 @@ import { MatNativeDateModule } from '@angular/material/core';
   exports: [
     DatatableComponent,
     ReusableTableComponent  
+  ],
+  providers: [
+    { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: { appearance: 'fill' } }
   ]
 })
 export class SharedModule { }
