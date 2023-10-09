@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 
@@ -44,6 +45,7 @@ export class DatatableComponent implements OnChanges {
   createGridFormGroup(ele: any): any {
     let formGroup: any = {};
     formGroup['action'] = new FormControl('existingRecord');
+    formGroup['isEditable'] = new FormControl(false)
     for(const [key, value] of Object.entries(ele)) {
           formGroup[key] = new FormControl(value);
     }
@@ -66,7 +68,7 @@ export class DatatableComponent implements OnChanges {
   editGridForm(gridFormElement: any, i: number) {
 
     // VOFormElement.get('VORows').at(i).get('name').disabled(false)
-    gridFormElement.get('gridRows').at(i).get('isEditable').patchValue(false);
+    gridFormElement.get('gridRows').at(i).get('isEditable').patchValue(true);
     // this.isEditableNew = true;
 
   }
@@ -74,14 +76,13 @@ export class DatatableComponent implements OnChanges {
   // On click of correct button in table (after click on edit) this method will call
   saveGridFrom(gridFormElement: any, i: number) {
     // alert('SaveVO')
-    gridFormElement.get('gridRows').at(i).get('isEditable').patchValue(true);
+    gridFormElement.get('gridRows').at(i).get('isEditable').patchValue(false);
   }
 
   // On click of cancel button in the table (after click on edit) this method will call and reset the previous data
   cancelGridForm(gridFormElement: any, i: number) {
-    gridFormElement.get('gridRows').at(i).get('isEditable').patchValue(true);
+    gridFormElement.get('gridRows').at(i).get('isEditable').patchValue(false);
   }
-
 
 
 }

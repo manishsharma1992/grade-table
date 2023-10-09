@@ -1,106 +1,131 @@
 {
-  "columns": [{
+  "status": 200,
+  "columns": [
+    {
+      "colDisplayValue": "Serial No",
+      "colValue": "srNo",
+      "colDataType": "number",
+      "isReadOnly": true,
+      "isHidden": false,
+      "isSticky": true
+    },
+    {
       "colDisplayValue": "Student Id",
       "colValue": "studentId",
       "colDataType": "number",
-      "isEditable": "false",
-      "isHidden": true,
+      "isReadOnly": true,
+      "isHidden": false,
       "isSticky": true
-  },{
-    "colDisplayValue": "Seat No",
-    "colValue": "seatNo",
-    "colDataType": "number",
-    "isEditable": "false",
-    "isHidden": false,
-    "isSticky": true
-  },{
-    "colDisplayValue": "Absent",
-    "colValue": "absent",
-    "colDataType": "string",
-    "isEditable": "false",
-    "isHidden": false,
-    "isSticky": true
-  },{
-    "colDisplayValue": "Question #1 | 5",
-    "colValue": "q1",
-    "colDataType": "list",
-    "isEditable": "true",
-    "isHidden": false,
-    "isSticky": false
-  },{
-    "colDisplayValue": "Question #2 | 5",
-    "colValue": "q2",
-    "colDataType": "list",
-    "isEditable": "true",
-    "isHidden": false,
-    "isSticky": false
-  },{
-    "colDisplayValue": "Question #3 | 5",
-    "colValue": "q3",
-    "colDataType": "list",
-    "isEditable": "true",
-    "isHidden": false,
-    "isSticky": false
-  },{
-    "colDisplayValue": "Question #4 | 8",
-    "colValue": "q4",
-    "colDataType": "list",
-    "isEditable": "true",
-    "isHidden": false,
-    "isSticky": false
-  },{
-    "colDisplayValue": "Question #5 | 6",
-    "colValue": "q5",
-    "colDataType": "list",
-    "isEditable": "true",
-    "isHidden": false,
-    "isSticky": false
-  },{
-    "colDisplayValue": "Question #6 | 9",
-    "colValue": "q6",
-    "colDataType": "list",
-    "isEditable": "true",
-    "isHidden": false,
-    "isSticky": false
-  },{
-    "colDisplayValue": "Question #7 | 10",
-    "colValue": "q7",
-    "colDataType": "list",
-    "isEditable": "true",
-    "isHidden": false,
-    "isSticky": false
-  },{
-    "colDisplayValue": "Question #8 | 15",
-    "colValue": "q8",
-    "colDataType": "list",
-    "isEditable": "true",
-    "isHidden": false,
-    "isSticky": false
-  },{
-    "colDisplayValue": "Question #9 | 13",
-    "colValue": "q9",
-    "colDataType": "list",
-    "isEditable": "true",
-    "isHidden": false,
-    "isSticky": false
-  },{
-    "colDisplayValue": "Question #10 | 20",
-    "colValue": "q10",
-    "colDataType": "list",
-    "isEditable": "true",
-    "isHidden": false,
-    "isSticky": false
-  },{
-    "colDisplayValue": "Remarks",
-    "colValue": "remarks",
-    "colDataType": "string",
-    "isEditable": "true",
-    "isHidden": false,
-    "isSticky": false
-  }],
+    },
+    {
+      "colDisplayValue": "Seat No",
+      "colValue": "seatNo",
+      "colDataType": "number",
+      "isReadOnly": true,
+      "isHidden": false,
+      "isSticky": true
+    },
+    {
+      "colDisplayValue": "Absent",
+      "colValue": "absent",
+      "colDataType": "checkbox",
+      "isReadOnly": false,
+      "isHidden": false,
+      "isSticky": true
+    },
+    {
+      "colDisplayValue": "Question #1 | 5",
+      "colValue": "q1",
+      "colDataType": "comboboxes",
+      "isReadOnly": false,
+      "isHidden": false,
+      "isSticky": false
+    },
+    {
+      "colDisplayValue": "Question #2 | 5",
+      "colValue": "q2",
+      "colDataType": "comboboxes",
+      "isReadOnly": false,
+      "isHidden": false,
+      "isSticky": false
+    },
+    {
+      "colDisplayValue": "Question #3 | 5",
+      "colValue": "q3",
+      "colDataType": "comboboxes",
+      "isReadOnly": false,
+      "isHidden": false,
+      "isSticky": false
+    },
+    {
+      "colDisplayValue": "Question #4 | 8",
+      "colValue": "q4",
+      "colDataType": "comboboxes",
+      "isReadOnly": false,
+      "isHidden": false,
+      "isSticky": false
+    },
+    {
+      "colDisplayValue": "Question #5 | 6",
+      "colValue": "q5",
+      "colDataType": "comboboxes",
+      "isReadOnly": false,
+      "isHidden": false,
+      "isSticky": false
+    },
+    {
+      "colDisplayValue": "Question #6 | 9",
+      "colValue": "q6",
+      "colDataType": "comboboxes",
+      "isReadOnly": false,
+      "isHidden": false,
+      "isSticky": false
+    },
+    {
+      "colDisplayValue": "Question #7 | 10",
+      "colValue": "q7",
+      "colDataType": "comboboxes",
+      "isReadOnly": false,
+      "isHidden": false,
+      "isSticky": false
+    },
+    {
+      "colDisplayValue": "Question #8 | 15",
+      "colValue": "q8",
+      "colDataType": "comboboxes",
+      "isReadOnly": false,
+      "isHidden": false,
+      "isSticky": false
+    },
+    {
+      "colDisplayValue": "Question #9 | 13",
+      "colValue": "q9",
+      "colDataType": "comboboxes",
+      "isReadOnly": false,
+      "isHidden": false,
+      "isSticky": false
+    },
+    {
+      "colDisplayValue": "Question #10 | 20",
+      "colValue": "q10",
+      "colDataType": "comboboxes",
+      "isReadOnly": false,
+      "isHidden": false,
+      "isSticky": false
+    },
+    {
+      "colDisplayValue": "Remarks",
+      "colValue": "remarks",
+      "colDataType": "string",
+      "isReadOnly": false,
+      "isHidden": false,
+      "isSticky": false
+    }
+  ],
   "data": [
     {
-      "studentId": 1,
+      "srNo": 1,
+      "studentId": 1001,
       "seatNo": 101,
       "absent": "TRUE",
       "q1": 0,
@@ -116,7 +141,8 @@
       "remarks": ""
     },
     {
-      "studentId": 2,
+      "srNo": 2,
+      "studentId": 1002,
       "seatNo": 102,
       "absent": "TRUE",
       "q1": 4,
@@ -132,7 +158,8 @@
       "remarks": ""
     },
     {
-      "studentId": 3,
+      "srNo": 3,
+      "studentId": 1003,
       "seatNo": 103,
       "absent": "FALSE",
       "q1": 5,
@@ -148,7 +175,8 @@
       "remarks": ""
     },
     {
-      "studentId": 4,
+      "srNo": 4,
+      "studentId": 1004,
       "seatNo": 104,
       "absent": "FALSE",
       "q1": 5,
@@ -164,7 +192,8 @@
       "remarks": ""
     },
     {
-      "studentId": 5,
+      "srNo": 5,
+      "studentId": 1005,
       "seatNo": 105,
       "absent": "FALSE",
       "q1": 5,
@@ -180,7 +209,8 @@
       "remarks": ""
     },
     {
-      "studentId": 6,
+      "srNo": 6,
+      "studentId": 1006,
       "seatNo": 106,
       "absent": "FALSE",
       "q1": 1,
@@ -196,7 +226,8 @@
       "remarks": ""
     },
     {
-      "studentId": 7,
+      "srNo": 7,
+      "studentId": 1007,
       "seatNo": 107,
       "absent": "FALSE",
       "q1": 3,
@@ -212,7 +243,8 @@
       "remarks": ""
     },
     {
-      "studentId": 8,
+      "srNo": 8,
+      "studentId": 1008,
       "seatNo": 108,
       "absent": "FALSE",
       "q1": 5,
@@ -228,7 +260,8 @@
       "remarks": ""
     },
     {
-      "studentId": 9,
+      "srNo": 9,
+      "studentId": 1009,
       "seatNo": 109,
       "absent": "FALSE",
       "q1": 3,
@@ -244,7 +277,8 @@
       "remarks": ""
     },
     {
-      "studentId": 10,
+      "srNo": 10,
+      "studentId": 1010,
       "seatNo": 110,
       "absent": "TRUE",
       "q1": 4,
@@ -260,7 +294,8 @@
       "remarks": ""
     },
     {
-      "studentId": 11,
+      "srNo": 11,
+      "studentId": 1011,
       "seatNo": 111,
       "absent": "TRUE",
       "q1": 0,
@@ -276,7 +311,8 @@
       "remarks": ""
     },
     {
-      "studentId": 12,
+      "srNo": 12,
+      "studentId": 1012,
       "seatNo": 112,
       "absent": "FALSE",
       "q1": 5,
@@ -292,7 +328,8 @@
       "remarks": ""
     },
     {
-      "studentId": 13,
+      "srNo": 13,
+      "studentId": 1013,
       "seatNo": 113,
       "absent": "FALSE",
       "q1": 3,
@@ -308,7 +345,8 @@
       "remarks": ""
     },
     {
-      "studentId": 14,
+      "srNo": 14,
+      "studentId": 1014,
       "seatNo": 114,
       "absent": "FALSE",
       "q1": 3,
@@ -324,7 +362,8 @@
       "remarks": ""
     },
     {
-      "studentId": 15,
+      "srNo": 15,
+      "studentId": 1015,
       "seatNo": 115,
       "absent": "TRUE",
       "q1": 3,
@@ -340,7 +379,8 @@
       "remarks": ""
     },
     {
-      "studentId": 16,
+      "srNo": 16,
+      "studentId": 1016,
       "seatNo": 116,
       "absent": "TRUE",
       "q1": 5,
@@ -356,7 +396,8 @@
       "remarks": ""
     },
     {
-      "studentId": 17,
+      "srNo": 17,
+      "studentId": 1017,
       "seatNo": 117,
       "absent": "TRUE",
       "q1": 0,
@@ -372,7 +413,8 @@
       "remarks": ""
     },
     {
-      "studentId": 18,
+      "srNo": 18,
+      "studentId": 1018,
       "seatNo": 118,
       "absent": "FALSE",
       "q1": 4,
@@ -388,7 +430,8 @@
       "remarks": ""
     },
     {
-      "studentId": 19,
+      "srNo": 19,
+      "studentId": 1019,
       "seatNo": 119,
       "absent": "TRUE",
       "q1": 2,
@@ -404,7 +447,8 @@
       "remarks": ""
     },
     {
-      "studentId": 20,
+      "srNo": 20,
+      "studentId": 1020,
       "seatNo": 120,
       "absent": "TRUE",
       "q1": 2,
@@ -420,7 +464,8 @@
       "remarks": ""
     },
     {
-      "studentId": 21,
+      "srNo": 21,
+      "studentId": 1021,
       "seatNo": 121,
       "absent": "FALSE",
       "q1": 3,
@@ -436,7 +481,8 @@
       "remarks": ""
     },
     {
-      "studentId": 22,
+      "srNo": 22,
+      "studentId": 1022,
       "seatNo": 122,
       "absent": "TRUE",
       "q1": 4,
@@ -452,7 +498,8 @@
       "remarks": ""
     },
     {
-      "studentId": 23,
+      "srNo": 23,
+      "studentId": 1023,
       "seatNo": 123,
       "absent": "FALSE",
       "q1": 1,
@@ -468,7 +515,8 @@
       "remarks": ""
     },
     {
-      "studentId": 24,
+      "srNo": 24,
+      "studentId": 1024,
       "seatNo": 124,
       "absent": "TRUE",
       "q1": 1,
@@ -484,7 +532,8 @@
       "remarks": ""
     },
     {
-      "studentId": 25,
+      "srNo": 25,
+      "studentId": 1025,
       "seatNo": 125,
       "absent": "FALSE",
       "q1": 0,
@@ -500,7 +549,8 @@
       "remarks": ""
     },
     {
-      "studentId": 26,
+      "srNo": 26,
+      "studentId": 1026,
       "seatNo": 126,
       "absent": "TRUE",
       "q1": 0,
@@ -516,7 +566,8 @@
       "remarks": ""
     },
     {
-      "studentId": 27,
+      "srNo": 27,
+      "studentId": 1027,
       "seatNo": 127,
       "absent": "TRUE",
       "q1": 2,
@@ -532,7 +583,8 @@
       "remarks": ""
     },
     {
-      "studentId": 28,
+      "srNo": 28,
+      "studentId": 1028,
       "seatNo": 128,
       "absent": "FALSE",
       "q1": 3,
@@ -548,7 +600,8 @@
       "remarks": ""
     },
     {
-      "studentId": 29,
+      "srNo": 29,
+      "studentId": 1029,
       "seatNo": 129,
       "absent": "TRUE",
       "q1": 0,
@@ -564,7 +617,8 @@
       "remarks": ""
     },
     {
-      "studentId": 30,
+      "srNo": 30,
+      "studentId": 1030,
       "seatNo": 130,
       "absent": "FALSE",
       "q1": 5,
@@ -580,7 +634,8 @@
       "remarks": ""
     },
     {
-      "studentId": 31,
+      "srNo": 31,
+      "studentId": 1031,
       "seatNo": 131,
       "absent": "FALSE",
       "q1": 3,
@@ -596,7 +651,8 @@
       "remarks": ""
     },
     {
-      "studentId": 32,
+      "srNo": 32,
+      "studentId": 1032,
       "seatNo": 132,
       "absent": "TRUE",
       "q1": 3,
@@ -612,7 +668,8 @@
       "remarks": ""
     },
     {
-      "studentId": 33,
+      "srNo": 33,
+      "studentId": 1033,
       "seatNo": 133,
       "absent": "FALSE",
       "q1": 4,
@@ -628,7 +685,8 @@
       "remarks": ""
     },
     {
-      "studentId": 34,
+      "srNo": 34,
+      "studentId": 1034,
       "seatNo": 134,
       "absent": "FALSE",
       "q1": 5,
@@ -644,7 +702,8 @@
       "remarks": ""
     },
     {
-      "studentId": 35,
+      "srNo": 35,
+      "studentId": 1035,
       "seatNo": 135,
       "absent": "TRUE",
       "q1": 4,
@@ -660,7 +719,8 @@
       "remarks": ""
     },
     {
-      "studentId": 36,
+      "srNo": 36,
+      "studentId": 1036,
       "seatNo": 136,
       "absent": "TRUE",
       "q1": 5,
@@ -676,7 +736,8 @@
       "remarks": ""
     },
     {
-      "studentId": 37,
+      "srNo": 37,
+      "studentId": 1037,
       "seatNo": 137,
       "absent": "FALSE",
       "q1": 3,
@@ -692,7 +753,8 @@
       "remarks": ""
     },
     {
-      "studentId": 38,
+      "srNo": 38,
+      "studentId": 1038,
       "seatNo": 138,
       "absent": "TRUE",
       "q1": 1,
@@ -708,7 +770,8 @@
       "remarks": ""
     },
     {
-      "studentId": 39,
+      "srNo": 39,
+      "studentId": 1039,
       "seatNo": 139,
       "absent": "FALSE",
       "q1": 3,
@@ -724,7 +787,8 @@
       "remarks": ""
     },
     {
-      "studentId": 40,
+      "srNo": 40,
+      "studentId": 1040,
       "seatNo": 140,
       "absent": "FALSE",
       "q1": 2,
@@ -740,7 +804,8 @@
       "remarks": ""
     },
     {
-      "studentId": 41,
+      "srNo": 41,
+      "studentId": 1041,
       "seatNo": 141,
       "absent": "TRUE",
       "q1": 2,
@@ -756,7 +821,8 @@
       "remarks": ""
     },
     {
-      "studentId": 42,
+      "srNo": 42,
+      "studentId": 1042,
       "seatNo": 142,
       "absent": "TRUE",
       "q1": 1,
@@ -772,7 +838,8 @@
       "remarks": ""
     },
     {
-      "studentId": 43,
+      "srNo": 43,
+      "studentId": 1043,
       "seatNo": 143,
       "absent": "FALSE",
       "q1": 5,
@@ -788,7 +855,8 @@
       "remarks": ""
     },
     {
-      "studentId": 44,
+      "srNo": 44,
+      "studentId": 1044,
       "seatNo": 144,
       "absent": "FALSE",
       "q1": 5,
@@ -804,7 +872,8 @@
       "remarks": ""
     },
     {
-      "studentId": 45,
+      "srNo": 45,
+      "studentId": 1045,
       "seatNo": 145,
       "absent": "FALSE",
       "q1": 2,
@@ -820,7 +889,8 @@
       "remarks": ""
     },
     {
-      "studentId": 46,
+      "srNo": 46,
+      "studentId": 1046,
       "seatNo": 146,
       "absent": "FALSE",
       "q1": 1,
@@ -836,7 +906,8 @@
       "remarks": ""
     },
     {
-      "studentId": 47,
+      "srNo": 47,
+      "studentId": 1047,
       "seatNo": 147,
       "absent": "FALSE",
       "q1": 0,
@@ -852,7 +923,8 @@
       "remarks": ""
     },
     {
-      "studentId": 48,
+      "srNo": 48,
+      "studentId": 1048,
       "seatNo": 148,
       "absent": "TRUE",
       "q1": 3,
@@ -868,7 +940,8 @@
       "remarks": ""
     },
     {
-      "studentId": 49,
+      "srNo": 49,
+      "studentId": 1049,
       "seatNo": 149,
       "absent": "FALSE",
       "q1": 1,
@@ -884,7 +957,8 @@
       "remarks": ""
     },
     {
-      "studentId": 50,
+      "srNo": 50,
+      "studentId": 1050,
       "seatNo": 150,
       "absent": "TRUE",
       "q1": 0,
@@ -900,7 +974,8 @@
       "remarks": ""
     },
     {
-      "studentId": 51,
+      "srNo": 51,
+      "studentId": 1051,
       "seatNo": 151,
       "absent": "TRUE",
       "q1": 5,
@@ -916,7 +991,8 @@
       "remarks": ""
     },
     {
-      "studentId": 52,
+      "srNo": 52,
+      "studentId": 1052,
       "seatNo": 152,
       "absent": "FALSE",
       "q1": 2,
@@ -932,7 +1008,8 @@
       "remarks": ""
     },
     {
-      "studentId": 53,
+      "srNo": 53,
+      "studentId": 1053,
       "seatNo": 153,
       "absent": "FALSE",
       "q1": 2,
@@ -948,7 +1025,8 @@
       "remarks": ""
     },
     {
-      "studentId": 54,
+      "srNo": 54,
+      "studentId": 1054,
       "seatNo": 154,
       "absent": "TRUE",
       "q1": 0,
@@ -964,7 +1042,8 @@
       "remarks": ""
     },
     {
-      "studentId": 55,
+      "srNo": 55,
+      "studentId": 1055,
       "seatNo": 155,
       "absent": "FALSE",
       "q1": 4,
@@ -980,7 +1059,8 @@
       "remarks": ""
     },
     {
-      "studentId": 56,
+      "srNo": 56,
+      "studentId": 1056,
       "seatNo": 156,
       "absent": "FALSE",
       "q1": 5,
@@ -996,7 +1076,8 @@
       "remarks": ""
     },
     {
-      "studentId": 57,
+      "srNo": 57,
+      "studentId": 1057,
       "seatNo": 157,
       "absent": "FALSE",
       "q1": 1,
@@ -1012,7 +1093,8 @@
       "remarks": ""
     },
     {
-      "studentId": 58,
+      "srNo": 58,
+      "studentId": 1058,
       "seatNo": 158,
       "absent": "TRUE",
       "q1": 2,
@@ -1028,7 +1110,8 @@
       "remarks": ""
     },
     {
-      "studentId": 59,
+      "srNo": 59,
+      "studentId": 1059,
       "seatNo": 159,
       "absent": "TRUE",
       "q1": 5,
@@ -1044,7 +1127,8 @@
       "remarks": ""
     },
     {
-      "studentId": 60,
+      "srNo": 60,
+      "studentId": 1060,
       "seatNo": 160,
       "absent": "TRUE",
       "q1": 4,
@@ -1060,7 +1144,8 @@
       "remarks": ""
     },
     {
-      "studentId": 61,
+      "srNo": 61,
+      "studentId": 1061,
       "seatNo": 161,
       "absent": "FALSE",
       "q1": 3,
@@ -1076,7 +1161,8 @@
       "remarks": ""
     },
     {
-      "studentId": 62,
+      "srNo": 62,
+      "studentId": 1062,
       "seatNo": 162,
       "absent": "FALSE",
       "q1": 5,
@@ -1092,7 +1178,8 @@
       "remarks": ""
     },
     {
-      "studentId": 63,
+      "srNo": 63,
+      "studentId": 1063,
       "seatNo": 163,
       "absent": "FALSE",
       "q1": 3,
@@ -1108,7 +1195,8 @@
       "remarks": ""
     },
     {
-      "studentId": 64,
+      "srNo": 64,
+      "studentId": 1064,
       "seatNo": 164,
       "absent": "FALSE",
       "q1": 5,
@@ -1124,7 +1212,8 @@
       "remarks": ""
     },
     {
-      "studentId": 65,
+      "srNo": 65,
+      "studentId": 1065,
       "seatNo": 165,
       "absent": "FALSE",
       "q1": 2,
@@ -1140,7 +1229,8 @@
       "remarks": ""
     },
     {
-      "studentId": 66,
+      "srNo": 66,
+      "studentId": 1066,
       "seatNo": 166,
       "absent": "FALSE",
       "q1": 3,
@@ -1156,7 +1246,8 @@
       "remarks": ""
     },
     {
-      "studentId": 67,
+      "srNo": 67,
+      "studentId": 1067,
       "seatNo": 167,
       "absent": "TRUE",
       "q1": 2,
@@ -1172,7 +1263,8 @@
       "remarks": ""
     },
     {
-      "studentId": 68,
+      "srNo": 68,
+      "studentId": 1068,
       "seatNo": 168,
       "absent": "TRUE",
       "q1": 2,
@@ -1188,7 +1280,8 @@
       "remarks": ""
     },
     {
-      "studentId": 69,
+      "srNo": 69,
+      "studentId": 1069,
       "seatNo": 169,
       "absent": "FALSE",
       "q1": 4,
@@ -1204,7 +1297,8 @@
       "remarks": ""
     },
     {
-      "studentId": 70,
+      "srNo": 70,
+      "studentId": 1070,
       "seatNo": 170,
       "absent": "FALSE",
       "q1": 2,
@@ -1220,7 +1314,8 @@
       "remarks": ""
     },
     {
-      "studentId": 71,
+      "srNo": 71,
+      "studentId": 1071,
       "seatNo": 171,
       "absent": "TRUE",
       "q1": 2,
@@ -1236,7 +1331,8 @@
       "remarks": ""
     },
     {
-      "studentId": 72,
+      "srNo": 72,
+      "studentId": 1072,
       "seatNo": 172,
       "absent": "FALSE",
       "q1": 3,
@@ -1252,7 +1348,8 @@
       "remarks": ""
     },
     {
-      "studentId": 73,
+      "srNo": 73,
+      "studentId": 1073,
       "seatNo": 173,
       "absent": "TRUE",
       "q1": 2,
@@ -1268,7 +1365,8 @@
       "remarks": ""
     },
     {
-      "studentId": 74,
+      "srNo": 74,
+      "studentId": 1074,
       "seatNo": 174,
       "absent": "TRUE",
       "q1": 1,
@@ -1284,7 +1382,8 @@
       "remarks": ""
     },
     {
-      "studentId": 75,
+      "srNo": 75,
+      "studentId": 1075,
       "seatNo": 175,
       "absent": "TRUE",
       "q1": 3,
@@ -1300,7 +1399,8 @@
       "remarks": ""
     },
     {
-      "studentId": 76,
+      "srNo": 76,
+      "studentId": 1076,
       "seatNo": 176,
       "absent": "TRUE",
       "q1": 4,
@@ -1316,7 +1416,8 @@
       "remarks": ""
     },
     {
-      "studentId": 77,
+      "srNo": 77,
+      "studentId": 1077,
       "seatNo": 177,
       "absent": "TRUE",
       "q1": 5,
@@ -1332,7 +1433,8 @@
       "remarks": ""
     },
     {
-      "studentId": 78,
+      "srNo": 78,
+      "studentId": 1078,
       "seatNo": 178,
       "absent": "FALSE",
       "q1": 5,
@@ -1348,7 +1450,8 @@
       "remarks": ""
     },
     {
-      "studentId": 79,
+      "srNo": 79,
+      "studentId": 1079,
       "seatNo": 179,
       "absent": "FALSE",
       "q1": 4,
@@ -1364,7 +1467,8 @@
       "remarks": ""
     },
     {
-      "studentId": 80,
+      "srNo": 80,
+      "studentId": 1080,
       "seatNo": 180,
       "absent": "TRUE",
       "q1": 0,
@@ -1380,7 +1484,8 @@
       "remarks": ""
     },
     {
-      "studentId": 81,
+      "srNo": 81,
+      "studentId": 1081,
       "seatNo": 181,
       "absent": "TRUE",
       "q1": 1,
@@ -1396,7 +1501,8 @@
       "remarks": ""
     },
     {
-      "studentId": 82,
+      "srNo": 82,
+      "studentId": 1082,
       "seatNo": 182,
       "absent": "FALSE",
       "q1": 4,
@@ -1412,7 +1518,8 @@
       "remarks": ""
     },
     {
-      "studentId": 83,
+      "srNo": 83,
+      "studentId": 1083,
       "seatNo": 183,
       "absent": "FALSE",
       "q1": 4,
@@ -1428,7 +1535,8 @@
       "remarks": ""
     },
     {
-      "studentId": 84,
+      "srNo": 84,
+      "studentId": 1084,
       "seatNo": 184,
       "absent": "FALSE",
       "q1": 2,
@@ -1444,7 +1552,8 @@
       "remarks": ""
     },
     {
-      "studentId": 85,
+      "srNo": 85,
+      "studentId": 1085,
       "seatNo": 185,
       "absent": "TRUE",
       "q1": 1,
@@ -1460,7 +1569,8 @@
       "remarks": ""
     },
     {
-      "studentId": 86,
+      "srNo": 86,
+      "studentId": 1086,
       "seatNo": 186,
       "absent": "TRUE",
       "q1": 4,
@@ -1476,7 +1586,8 @@
       "remarks": ""
     },
     {
-      "studentId": 87,
+      "srNo": 87,
+      "studentId": 1087,
       "seatNo": 187,
       "absent": "FALSE",
       "q1": 3,
@@ -1492,7 +1603,8 @@
       "remarks": ""
     },
     {
-      "studentId": 88,
+      "srNo": 88,
+      "studentId": 1088,
       "seatNo": 188,
       "absent": "FALSE",
       "q1": 4,
@@ -1508,7 +1620,8 @@
       "remarks": ""
     },
     {
-      "studentId": 89,
+      "srNo": 89,
+      "studentId": 1089,
       "seatNo": 189,
       "absent": "FALSE",
       "q1": 5,
@@ -1524,7 +1637,8 @@
       "remarks": ""
     },
     {
-      "studentId": 90,
+      "srNo": 90,
+      "studentId": 1090,
       "seatNo": 190,
       "absent": "FALSE",
       "q1": 2,
@@ -1540,7 +1654,8 @@
       "remarks": ""
     },
     {
-      "studentId": 91,
+      "srNo": 91,
+      "studentId": 1091,
       "seatNo": 191,
       "absent": "TRUE",
       "q1": 1,
@@ -1556,7 +1671,8 @@
       "remarks": ""
     },
     {
-      "studentId": 92,
+      "srNo": 92,
+      "studentId": 1092,
       "seatNo": 192,
       "absent": "FALSE",
       "q1": 2,
@@ -1572,7 +1688,8 @@
       "remarks": ""
     },
     {
-      "studentId": 93,
+      "srNo": 93,
+      "studentId": 1093,
       "seatNo": 193,
       "absent": "TRUE",
       "q1": 1,
@@ -1588,7 +1705,8 @@
       "remarks": ""
     },
     {
-      "studentId": 94,
+      "srNo": 94,
+      "studentId": 1094,
       "seatNo": 194,
       "absent": "FALSE",
       "q1": 1,
@@ -1604,7 +1722,8 @@
       "remarks": ""
     },
     {
-      "studentId": 95,
+      "srNo": 95,
+      "studentId": 1095,
       "seatNo": 195,
       "absent": "FALSE",
       "q1": 3,
@@ -1620,7 +1739,8 @@
       "remarks": ""
     },
     {
-      "studentId": 96,
+      "srNo": 96,
+      "studentId": 1096,
       "seatNo": 196,
       "absent": "FALSE",
       "q1": 1,
@@ -1636,7 +1756,8 @@
       "remarks": ""
     },
     {
-      "studentId": 97,
+      "srNo": 97,
+      "studentId": 1097,
       "seatNo": 197,
       "absent": "FALSE",
       "q1": 1,
@@ -1652,7 +1773,8 @@
       "remarks": ""
     },
     {
-      "studentId": 98,
+      "srNo": 98,
+      "studentId": 1098,
       "seatNo": 198,
       "absent": "FALSE",
       "q1": 4,
@@ -1668,7 +1790,8 @@
       "remarks": ""
     },
     {
-      "studentId": 99,
+      "srNo": 99,
+      "studentId": 1099,
       "seatNo": 199,
       "absent": "FALSE",
       "q1": 4,
@@ -1684,7 +1807,8 @@
       "remarks": ""
     },
     {
-      "studentId": 100,
+      "srNo": 100,
+      "studentId": 1100,
       "seatNo": 200,
       "absent": "FALSE",
       "q1": 0,
@@ -1701,5 +1825,3 @@
     }
   ]
 }
-
-
