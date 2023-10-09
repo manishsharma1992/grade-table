@@ -25,7 +25,7 @@ export class DatatableComponent implements OnChanges {
   
   ngOnChanges(changes: SimpleChanges): void {
     this.datastore = changes['datastore'].currentValue;
-    this.gridData = new MatTableDataSource<any>(this.datastore);
+    // this.gridData = new MatTableDataSource<any>(this.datastore);
     this.colValues = [];
     this.colValues.push('action');
     this.columns = changes['columns'].currentValue;
@@ -33,10 +33,10 @@ export class DatatableComponent implements OnChanges {
       this.colValues = [...this.colValues, column.colValue]
     });
     
-    // this.gridForm = this.formBuilder.group({
-    //   gridRows: this.formBuilder.array(this.datastore.map((ele: any) => this.createGridFormGroup(ele)))
-    // });
-    // this.gridData = new MatTableDataSource<any>((this.gridForm.get('gridRows') as FormArray).controls);
+    this.gridForm = this.formBuilder.group({
+      gridRows: this.formBuilder.array(this.datastore.map((ele: any) => this.createGridFormGroup(ele)))
+    });
+    this.gridData = new MatTableDataSource<any>((this.gridForm.get('gridRows') as FormArray).controls);
     this.gridData.paginator = this.paginator;
     
   }
@@ -44,7 +44,6 @@ export class DatatableComponent implements OnChanges {
   createGridFormGroup(ele: any): any {
     let formGroup: any = {};
     formGroup['action'] = new FormControl('existingRecord');
-    formGroup['isEditable'] = new FormControl(true);
     for(const [key, value] of Object.entries(ele)) {
           formGroup[key] = new FormControl(value);
     }
