@@ -11,7 +11,7 @@ import { MatTableDataSource } from '@angular/material/table';
 export class DatatableComponent implements OnChanges {
   
 
-  @Input() datasource!: any[];
+  @Input() datastore!: any[];
   @Input() columns!: any[];
   @Input() title: string = "";
 
@@ -24,19 +24,21 @@ export class DatatableComponent implements OnChanges {
   constructor(public formBuilder: FormBuilder) { }
   
   ngOnChanges(changes: SimpleChanges): void {
-    this.datasource = changes['datasource'].currentValue;
+    this.datastore = changes['datastore'].currentValue;
+    this.gridData = new MatTableDataSource<any>(this.datastore);
     this.colValues = [];
     this.colValues.push('action');
     this.columns = changes['columns'].currentValue;
-    this.columns.forEach(column => {
+    this.columns.filter(column => (column.isHidden !== true)).forEach(column => {
       this.colValues = [...this.colValues, column.colValue]
     });
     
-    this.gridForm = this.formBuilder.group({
-      gridRows: this.formBuilder.array(this.datasource.map((ele: any) => this.createGridFormGroup(ele)))
-    });
-    this.gridData = new MatTableDataSource<any>((this.gridForm.get('gridRows') as FormArray).controls);
+    // this.gridForm = this.formBuilder.group({
+    //   gridRows: this.formBuilder.array(this.datastore.map((ele: any) => this.createGridFormGroup(ele)))
+    // });
+    // this.gridData = new MatTableDataSource<any>((this.gridForm.get('gridRows') as FormArray).controls);
     this.gridData.paginator = this.paginator;
+    
   }
 
   createGridFormGroup(ele: any): any {

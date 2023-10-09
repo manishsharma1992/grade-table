@@ -1,109 +1,58 @@
-<h1>{{title}}</h1>
-<div class="container-fluid">
-    <section class="example-container mat-elevation-z8" tabindex="0">
-        <form [formGroup]="gridForm" autocomplete="off">
-            <ng-container formArrayName="gridRows">
-                <table mat-table [dataSource]="gridData" class="mat-elevation-z8">
-                    <ng-container matColumnDef="action" [sticky]="true">
-                        <th mat-header-cell *matHeaderCellDef> Action </th>
-                        <td mat-cell *matCellDef="let element; let i = index" [formGroup]="element">
-                            <button mat-icon-button class="material-icons app-toolbar-menu save-button"
-                                matTooltip="Save Changes" color="primary"
-                                *ngIf="!gridForm.get('gridRows')?.value[i].isEditable">
-                                <mat-icon>check_circle</mat-icon>
-                            </button>
-
-                            <button mat-icon-button class="material-icons app-toolbar-menu cancel-button"
-                                matTooltip="Cancel Changes" color="warn"
-                                *ngIf="!gridForm.get('gridRows')?.value[i].isEditable">
-                                <mat-icon>cancel</mat-icon>
-                            </button>
-
-                            <button mat-icon-button class="material-icons app-toolbar-menu save-button"
-                                matTooltip="Edit" color="primary"
-                                *ngIf="gridForm.get('gridRows')?.value[i].isEditable"
-                                (click)="editGridForm(gridForm, i)">
-                                <mat-icon>edit</mat-icon>
-                            </button>
-
-                            <button mat-icon-button class="material-icons app-toolbar-menu delete-button"
-                                matTooltip="Delete" color="warn"
-                                *ngIf="gridForm.get('gridRows')?.value[i].isEditable">
-                                <mat-icon>delete</mat-icon>
-                            </button>
-                        </td>
-                    </ng-container>
-                    <ng-container *ngFor="let column of columns">
-                        <ng-container *ngIf="column.isSticky; else displayNormalColumn">
-                            <ng-container matColumnDef="{{column.colValue}}" [sticky]="true">
-                                <th mat-header-cell *matHeaderCellDef>{{column.colDisplayValue}}</th>
-                                <td mat-cell *matCellDef="let element; let i = index" [formGroup]="element">
-                                    <ng-container *ngIf="!column.isEditable; else editableField">
-                                        <mat-form-field appearance="outline">
-                                            <input matInput  type="text"
-                                                formControlName="{{column.colValue}}" [readonly]="true"
-                                                placeholder="{{column.colValue}}" />
-                                        </mat-form-field>
-                                    </ng-container>
-                                    <ng-template #editableField>
-                                        <ng-container *ngIf="column.colDataType !== 'list'; else editableComboboxField">
-                                            <mat-form-field appearance="outline">
-                                                <input matInput type="text"
-                                                    formControlName="{{column.colValue}}"
-                                                    placeholder="{{column.colValue}}" />
-                                            </mat-form-field>
-                                        </ng-container>
-                                        <ng-template #editableComboboxField>
-                                            <mat-form-field appearance="outline">
-                                                <mat-select formControlName="{{column.colValue}}">
-                                                    <ng-container *ngFor="let item of getGridFormDropdownList(column)"></ng-container>
-                                                </mat-select>
-                                            </mat-form-field>
-                                        </ng-template>
-                                    </ng-template>
-                                </td>
-                            </ng-container>
-                        </ng-container>
-                        <ng-template #displayNormalColumn>
-                            <ng-container matColumnDef="{{column.colValue}}">
-                                <th mat-header-cell *matHeaderCellDef>{{column.colDisplayValue}}</th>
-                                <td mat-cell *matCellDef="let element; let i = index" [formGroup]="element">
-                                    <ng-container *ngIf="!column.isEditable; else editableField">
-                                        <mat-form-field appearance="outline">
-                                            <input matInput  type="text"
-                                                formControlName="{{column.colValue}}" [readonly]="true"
-                                                placeholder="{{column.colValue}}" />
-                                        </mat-form-field>
-                                    </ng-container>
-                                    <ng-template #editableField>
-                                        <ng-container *ngIf="column.colDataType !== 'list'; else editableComboboxField">
-                                            <mat-form-field appearance="outline">
-                                                <input matInput type="text"
-                                                    formControlName="{{column.colValue}}"
-                                                    placeholder="{{column.colValue}}" />
-                                            </mat-form-field>
-                                        </ng-container>
-                                        <ng-template #editableComboboxField>
-                                            <mat-form-field appearance="outline">
-                                                <mat-select formControlName="{{column.colValue}}">
-                                                    <ng-container *ngFor="let item of getGridFormDropdownList(column)">
-                                                        <mat-option value="item">{{item}}</mat-option>
-                                                    </ng-container>
-                                                </mat-select>
-                                            </mat-form-field>
-                                        </ng-template>
-                                    </ng-template>
-                                </td>
-                            </ng-container>
-                        </ng-template>
-                    </ng-container>
-                    <tr mat-header-row *matHeaderRowDef="colValues; sticky: true"></tr>
-                    <tr mat-row *matRowDef="let row; columns: colValues;"></tr>
-                </table>
-            </ng-container>
-        </form>
-        <mat-paginator class="mat-paginator-sticky" [pageSizeOptions]="[25, 50, 100]" showFirstLastButtons
-            aria-label="Select page">
-        </mat-paginator>
-    </section>
-</div>
+<div class="container mat-elevation-z8">
+    <table mat-table [dataSource]="gridData">
+       <ng-container matColumnDef="action" [sticky]="true">
+          <th mat-header-cell *matHeaderCellDef>Action</th>
+          <td mat-cell *matCellDef="let element; let i = index">
+             <button
+                mat-icon-button
+                class="material-icons app-toolbar-menu save-button"
+                matTooltip="Save Changes"
+                color="primary"
+                >
+                <mat-icon>check_circle</mat-icon>
+             </button>
+             <button
+                mat-icon-button
+                class="material-icons app-toolbar-menu cancel-button"
+                matTooltip="Cancel Changes"
+                color="warn"
+                >
+                <mat-icon>cancel</mat-icon>
+             </button>
+             <button
+                mat-icon-button
+                class="material-icons app-toolbar-menu save-button"
+                matTooltip="Edit"
+                color="primary"
+                >
+                <mat-icon>edit</mat-icon>
+             </button>
+             <button
+                mat-icon-button
+                class="material-icons app-toolbar-menu delete-button"
+                matTooltip="Delete"
+                color="warn"
+                >
+                <mat-icon>delete</mat-icon>
+             </button>
+          </td>
+       </ng-container>
+       <ng-container
+       matColumnDef="{{ column.colValue }}"
+       [sticky]="column.isSticky"
+       *ngFor="let column of columns"
+       >
+       <th mat-header-cell *matHeaderCellDef>{{ column.colDisplayValue }}</th>
+       <td mat-cell *matCellDef="let element">{{ element[column.colValue] }}</td>
+       </ng-container>
+       <tr mat-header-row *matHeaderRowDef="colValues; sticky: true"></tr>
+       <tr mat-row *matRowDef="let row; columns: colValues"></tr>
+    </table>
+    <div class="sticky-paginator">
+       <mat-paginator
+          fixed
+          [pageSizeOptions]="[25, 50, 100]"
+          showFirstLastButtons
+          ></mat-paginator>
+    </div>
+ </div>
