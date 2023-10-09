@@ -45,9 +45,9 @@ export class DatatableComponent implements OnChanges {
   createGridFormGroup(ele: any): any {
     let formGroup: any = {};
     formGroup['action'] = new FormControl('existingRecord');
-    formGroup['isEditable'] = new FormControl(false)
+    formGroup['isEditable'] = new FormControl(false);
     for(const [key, value] of Object.entries(ele)) {
-          formGroup[key] = new FormControl(value);
+      formGroup[key] = new FormControl(value);
     }
     return this.formBuilder.group(formGroup);
   }
@@ -77,12 +77,11 @@ export class DatatableComponent implements OnChanges {
   saveGridFrom(gridFormElement: any, i: number) {
     // alert('SaveVO')
     gridFormElement.get('gridRows').at(i).get('isEditable').patchValue(false);
+    console.log(gridFormElement.get('gridRows').at(i).value);
   }
 
   // On click of cancel button in the table (after click on edit) this method will call and reset the previous data
   cancelGridForm(gridFormElement: any, i: number) {
     gridFormElement.get('gridRows').at(i).get('isEditable').patchValue(false);
   }
-
-
 }
