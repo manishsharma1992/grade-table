@@ -40,18 +40,17 @@
                         <ng-container *ngIf="gridForm.get('gridRows')?.value[i].isEditable">
                             <div [ngSwitch]="column.colDataType">
                                 <mat-form-field  *ngSwitchCase="'checkbox'" style="font-size: 11px" [appearance]="!gridForm.get('gridRows')?.value[i].isEditable ? 'fill': 'outline'">
-                                    <mat-select required formControlName="{{column.colValue}}" style="font-size: 11px">
+                                    <mat-select  formControlName="{{column.colValue}}" (selectionChange)="onDropdownChange($event.value, column, gridForm, i)" style="font-size: 11px" required>
                                         <mat-option>--select something --</mat-option>
-                                        <mat-option [value]="'TRUE'">TRUE</mat-option>
-                                        <mat-option [value]="'FALSE'">FALSE</mat-option>
+                                        <mat-option *ngFor="let item of column.defaultValues" [value]="item">{{item}}</mat-option>
                                         <!-- <mat-option *ngFor="let ele of getComboValues(column.colValue)" [value]="ele.value">{{ele.viewValue}}</mat-option> -->
                                     </mat-select>
                                 </mat-form-field>
                                 <mat-form-field *ngSwitchCase="'comboboxes'" style="font-size: 11px"
                                     [appearance]="!gridForm.get('gridRows')?.value[i].isEditable ? 'fill': 'outline'">
-                                    <mat-select required formControlName="{{column.colValue}}" style="font-size: 11px" name="column.colValue">
+                                    <mat-select [(value)]="element[column.colValue]"  formControlName="{{column.colValue}}" style="font-size: 11px" name="column.colValue" required>
                                         <mat-option>--select something --</mat-option>
-                                        <mat-option *ngFor="let item of getGridFormDropdownList(column)" [value]="item">{{item}}</mat-option>
+                                        <mat-option *ngFor="let item of column.defaultValues" [value]="item">{{item}}</mat-option>
                                     </mat-select>
                                 </mat-form-field>
                                 <mat-form-field *ngSwitchDefault style="font-size: 11px"

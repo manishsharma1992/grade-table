@@ -4,122 +4,164 @@
     {
       "colDisplayValue": "Serial No",
       "colValue": "srNo",
+      "dataType": "number",
       "colDataType": "number",
       "isReadOnly": true,
       "isHidden": false,
-      "isSticky": true
+      "isSticky": true,
+      "isColValueDependentOn": ""
     },
     {
       "colDisplayValue": "Student Id",
       "colValue": "studentId",
+      "dataType": "number",
       "colDataType": "number",
       "isReadOnly": true,
       "isHidden": false,
-      "isSticky": true
+      "isSticky": true,
+      "isColValueDependentOn": ""
     },
     {
       "colDisplayValue": "Seat No",
       "colValue": "seatNo",
+      "dataType": "number",
       "colDataType": "number",
       "isReadOnly": true,
       "isHidden": false,
-      "isSticky": true
+      "isSticky": true,
+      "isColValueDependentOn": ""
     },
     {
       "colDisplayValue": "Absent",
       "colValue": "absent",
+      "dataType": "boolean",
       "colDataType": "checkbox",
       "isReadOnly": false,
       "isHidden": false,
-      "isSticky": true
+      "isSticky": true,
+      "defaultValues": ["TRUE", "FALSE"],
+      "isColValueDependentOn": {
+        "cols": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8", "q9", "q10", "remarks"]}
     },
     {
       "colDisplayValue": "Question #1 | 5",
       "colValue": "q1",
+      "dataType": "number",
       "colDataType": "comboboxes",
       "isReadOnly": false,
       "isHidden": false,
-      "isSticky": false
+      "isSticky": false,
+      "defaultValues": [1,2,3,4,5],
+      "isColValueDependentOn": ""
     },
     {
       "colDisplayValue": "Question #2 | 5",
       "colValue": "q2",
+      "dataType": "number",
       "colDataType": "comboboxes",
       "isReadOnly": false,
       "isHidden": false,
-      "isSticky": false
+      "isSticky": false,
+      "defaultValues": [1,2,3,4,5],
+      "isColValueDependentOn": ""
     },
     {
       "colDisplayValue": "Question #3 | 5",
       "colValue": "q3",
+      "dataType": "number",
       "colDataType": "comboboxes",
       "isReadOnly": false,
       "isHidden": false,
-      "isSticky": false
+      "isSticky": false,
+      "defaultValues": [1,2,3,4,5],
+      "isColValueDependentOn": ""
     },
     {
       "colDisplayValue": "Question #4 | 8",
       "colValue": "q4",
+      "dataType": "number",
       "colDataType": "comboboxes",
       "isReadOnly": false,
       "isHidden": false,
-      "isSticky": false
+      "isSticky": false,
+      "defaultValues": [1,2,3,4,5,6,7,8],
+      "isColValueDependentOn": ""
     },
     {
       "colDisplayValue": "Question #5 | 6",
       "colValue": "q5",
+      "dataType": "number",
       "colDataType": "comboboxes",
       "isReadOnly": false,
       "isHidden": false,
-      "isSticky": false
+      "isSticky": false,
+      "defaultValues": [1,2,3,4,5,6],
+      "isColValueDependentOn": ""
     },
     {
       "colDisplayValue": "Question #6 | 9",
       "colValue": "q6",
+      "dataType": "number",
       "colDataType": "comboboxes",
       "isReadOnly": false,
       "isHidden": false,
-      "isSticky": false
+      "isSticky": false,
+      "defaultValues": [1,2,3,4,5,6,7,8,9],
+      "isColValueDependentOn": ""
     },
     {
       "colDisplayValue": "Question #7 | 10",
       "colValue": "q7",
+      "dataType": "number",
       "colDataType": "comboboxes",
       "isReadOnly": false,
       "isHidden": false,
-      "isSticky": false
+      "isSticky": false,
+      "defaultValues": [1,2,3,4,5,6,7,8,9,10],
+      "isColValueDependentOn": ""
     },
     {
       "colDisplayValue": "Question #8 | 15",
       "colValue": "q8",
+      "dataType": "number",
       "colDataType": "comboboxes",
       "isReadOnly": false,
       "isHidden": false,
-      "isSticky": false
+      "isSticky": false,
+      "defaultValues":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+      "isColValueDependentOn": ""
     },
     {
       "colDisplayValue": "Question #9 | 13",
       "colValue": "q9",
+      "dataType": "number",
       "colDataType": "comboboxes",
       "isReadOnly": false,
       "isHidden": false,
-      "isSticky": false
+      "isSticky": false,
+      "defaultValues":[1,2,3,4,5,6,7,8,9,10,11,12,13],
+      "isColValueDependentOn": ""
     },
     {
       "colDisplayValue": "Question #10 | 20",
       "colValue": "q10",
+      "dataType": "number",
       "colDataType": "comboboxes",
       "isReadOnly": false,
       "isHidden": false,
-      "isSticky": false
+      "isSticky": false,
+      "defaultValues":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+      "isColValueDependentOn": ""
     },
     {
       "colDisplayValue": "Remarks",
       "colValue": "remarks",
+      "dataType": "string",
       "colDataType": "string",
       "isReadOnly": false,
       "isHidden": false,
-      "isSticky": false
+      "isSticky": false,
+      "isColValueDependentOn": ""
     }
   ],
   "data": [

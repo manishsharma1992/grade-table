@@ -1,8 +1,9 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { Dropdown } from 'src/app/models/dropdown.model';
 
 @Component({
   selector: 'offee-datatable',
@@ -15,6 +16,8 @@ export class DatatableComponent implements OnChanges {
   @Input() datastore!: any[];
   @Input() columns!: any[];
   @Input() title: string = "";
+
+  @Output() gridDatastore: EventEmitter<any> = new EventEmitter<any>();
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -55,11 +58,11 @@ export class DatatableComponent implements OnChanges {
   getGridFormDropdownList(column: any): any[] {
     const colDisplayValue = column.colDisplayValue as string;
     const pipeIdx = colDisplayValue.indexOf('|');
-    const dropdownData: number[] = [];
+    const dropdownData: Dropdown[] = [];
     if(pipeIdx && pipeIdx > -1) {
       const arrayLimit = Number(colDisplayValue.substring(pipeIdx + 1, colDisplayValue.length).trim());
       for(let i = 1; i <= arrayLimit; i++) {
-        dropdownData.push(i);
+        dropdownData.push({viewValue: String(i), value: i});
       }
     }
     return dropdownData;
@@ -77,11 +80,25 @@ export class DatatableComponent implements OnChanges {
   saveGridFrom(gridFormElement: any, i: number) {
     // alert('SaveVO')
     gridFormElement.get('gridRows').at(i).get('isEditable').patchValue(false);
-    console.log(gridFormElement.get('gridRows').at(i).value);
   }
 
   // On click of cancel button in the table (after click on edit) this method will call and reset the previous data
   cancelGridForm(gridFormElement: any, i: number) {
     gridFormElement.get('gridRows').at(i).get('isEditable').patchValue(false);
   }
+
+  onDropdownChange(value: any, column: any, gridFormElement: any, i: number) {
+    gridFormElement.get('gridRows').at(i).get(column.colValue).patchValue(value);
+    if(column.isColValueDependentOn && column.isColValueDependentOn.cols) {
+      if(column.dataType === 'boolean' && value === 'FALSE') {
+        if(Array.isArray(column.isColValueDependentOn.cols)) {
+          column.isColValueDependentOn.cols.forEach((ele: any) => {
+            gridFormElement.get('gridRows').at(i).get(String(ele)).patchValue(null);
+          })
+        }
+      }
+    }
+  }
+
 }
+
