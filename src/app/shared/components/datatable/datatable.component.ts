@@ -24,6 +24,7 @@ export class DatatableComponent implements OnChanges {
   colValues: any[] = [];
   gridData!: MatTableDataSource<any>;
   gridForm!: FormGroup;
+  gridFormValueAt: any;
 
   constructor(public formBuilder: FormBuilder) { }
   
@@ -88,18 +89,18 @@ export class DatatableComponent implements OnChanges {
   }
 
   onDropdownChange(value: any, column: any, gridFormElement: any, i: number) {
-    const prevValue = gridFormElement.get('gridRows')?.value[i];
+    if(!this.gridFormValueAt) this.gridFormValueAt = gridFormElement.get('gridRows')?.value[i];
     gridFormElement.get('gridRows').at(i).get(column.colValue).patchValue(value);
     if(column.isColValueDependentOn && column.isColValueDependentOn.cols) {
-      if(column.dataType === 'boolean' && value === 'FALSE') {
+      if(column.dataType === 'boolean' && value === 'TRUE') {
         if(Array.isArray(column.isColValueDependentOn.cols)) {
           column.isColValueDependentOn.cols.forEach((ele: any) => {
             gridFormElement.get('gridRows').at(i).get(String(ele)).patchValue(null);
           })
         }
       }
-      else if(column.dataType === 'boolean' && value === 'TRUE') {
-        for(const [key, value] of Object.entries(prevValue)) {
+      else if(column.dataType === 'boolean' && value === 'FALSE') {
+        for(const [key, value] of Object.entries(this.gridFormValueAt)) {
           gridFormElement.get('gridRows').at(i).get(String(key)).patchValue(value);
         }
       }

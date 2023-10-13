@@ -51,7 +51,7 @@
       "isReadOnly": false,
       "isHidden": false,
       "isSticky": false,
-      "defaultValues": [1,2,3,4,5],
+      "defaultValues": [0,1,2,3,4,5],
       "isColValueDependentOn": ""
     },
     {
@@ -62,7 +62,7 @@
       "isReadOnly": false,
       "isHidden": false,
       "isSticky": false,
-      "defaultValues": [1,2,3,4,5],
+      "defaultValues": [0,1,2,3,4,5],
       "isColValueDependentOn": ""
     },
     {
@@ -73,7 +73,7 @@
       "isReadOnly": false,
       "isHidden": false,
       "isSticky": false,
-      "defaultValues": [1,2,3,4,5],
+      "defaultValues": [0,1,2,3,4,5],
       "isColValueDependentOn": ""
     },
     {
@@ -84,7 +84,7 @@
       "isReadOnly": false,
       "isHidden": false,
       "isSticky": false,
-      "defaultValues": [1,2,3,4,5,6,7,8],
+      "defaultValues": [0,1,2,3,4,5,6,7,8],
       "isColValueDependentOn": ""
     },
     {
@@ -95,7 +95,7 @@
       "isReadOnly": false,
       "isHidden": false,
       "isSticky": false,
-      "defaultValues": [1,2,3,4,5,6],
+      "defaultValues": [0,1,2,3,4,5,6],
       "isColValueDependentOn": ""
     },
     {
@@ -106,7 +106,7 @@
       "isReadOnly": false,
       "isHidden": false,
       "isSticky": false,
-      "defaultValues": [1,2,3,4,5,6,7,8,9],
+      "defaultValues": [0,1,2,3,4,5,6,7,8,9],
       "isColValueDependentOn": ""
     },
     {
@@ -117,7 +117,7 @@
       "isReadOnly": false,
       "isHidden": false,
       "isSticky": false,
-      "defaultValues": [1,2,3,4,5,6,7,8,9,10],
+      "defaultValues": [0,1,2,3,4,5,6,7,8,9,10],
       "isColValueDependentOn": ""
     },
     {
@@ -128,7 +128,7 @@
       "isReadOnly": false,
       "isHidden": false,
       "isSticky": false,
-      "defaultValues":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+      "defaultValues":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
       "isColValueDependentOn": ""
     },
     {
@@ -139,7 +139,7 @@
       "isReadOnly": false,
       "isHidden": false,
       "isSticky": false,
-      "defaultValues":[1,2,3,4,5,6,7,8,9,10,11,12,13],
+      "defaultValues":[0,1,2,3,4,5,6,7,8,9,10,11,12,13],
       "isColValueDependentOn": ""
     },
     {
@@ -150,7 +150,7 @@
       "isReadOnly": false,
       "isHidden": false,
       "isSticky": false,
-      "defaultValues":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
+      "defaultValues":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20],
       "isColValueDependentOn": ""
     },
     {
