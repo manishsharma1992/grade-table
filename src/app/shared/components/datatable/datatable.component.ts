@@ -43,6 +43,7 @@ export class DatatableComponent implements OnChanges {
     });
     this.gridData = new MatTableDataSource<any>((this.gridForm.get('gridRows') as FormArray).controls);
     this.gridData.paginator = this.paginator;
+    this.gridDatastore.emit(this.gridForm.get('gridRows')?.value)
     
   }
 
@@ -81,6 +82,7 @@ export class DatatableComponent implements OnChanges {
   saveGridFrom(gridFormElement: any, i: number) {
     // alert('SaveVO')
     gridFormElement.get('gridRows').at(i).get('isEditable').patchValue(false);
+    this.gridDatastore.emit(this.gridForm.get('gridRows')?.value)
   }
 
   // On click of cancel button in the table (after click on edit) this method will call and reset the previous data

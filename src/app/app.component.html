@@ -1,3 +1,7 @@
 <router-outlet></router-outlet>
-<offee-datatable [title]="title" [datastore]="datasource" [columns]="columns"></offee-datatable>
+<offee-datatable 
+(gridDatastore)="getGridDatastore($event)"
+[title]="title" 
+[datastore]="datasource" 
+[columns]="columns"></offee-datatable>
 <!-- <offee-reusable-table></offee-reusable-table> -->

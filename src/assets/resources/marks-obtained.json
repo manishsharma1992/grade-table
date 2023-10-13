@@ -35,7 +35,7 @@
       "colDisplayValue": "Absent",
       "colValue": "absent",
       "dataType": "boolean",
-      "colDataType": "checkbox",
+      "colDataType": "comboboxes",
       "isReadOnly": false,
       "isHidden": false,
       "isSticky": true,
