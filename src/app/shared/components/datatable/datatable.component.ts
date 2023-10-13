@@ -88,6 +88,7 @@ export class DatatableComponent implements OnChanges {
   }
 
   onDropdownChange(value: any, column: any, gridFormElement: any, i: number) {
+    const prevValue = gridFormElement.get('gridRows')?.value[i];
     gridFormElement.get('gridRows').at(i).get(column.colValue).patchValue(value);
     if(column.isColValueDependentOn && column.isColValueDependentOn.cols) {
       if(column.dataType === 'boolean' && value === 'FALSE') {
@@ -95,6 +96,11 @@ export class DatatableComponent implements OnChanges {
           column.isColValueDependentOn.cols.forEach((ele: any) => {
             gridFormElement.get('gridRows').at(i).get(String(ele)).patchValue(null);
           })
+        }
+      }
+      else if(column.dataType === 'boolean' && value === 'TRUE') {
+        for(const [key, value] of Object.entries(prevValue)) {
+          gridFormElement.get('gridRows').at(i).get(String(key)).patchValue(value);
         }
       }
     }
