@@ -1,0 +1,438 @@
+{
+    "status": 200,
+    "message": "Successfully fetched grading table",
+    "maxMarks": 933120000000,
+    "columns": [
+        {
+            "colDisplayValue": "Serial No",
+            "colValue": "srNo",
+            "dataType": "number",
+            "colDataType": "number",
+            "isReadOnly": true,
+            "isHidden": false,
+            "isSticky": true,
+            "isColValueDependentOn": ""
+        },
+        {
+            "colDisplayValue": "Student Id",
+            "colValue": "studentId",
+            "dataType": "string",
+            "colDataType": "string",
+            "isReadOnly": true,
+            "isHidden": true,
+            "isSticky": true,
+            "isColValueDependentOn": ""
+        },
+        {
+            "colDisplayValue": "Seat No",
+            "colValue": "seatNo",
+            "dataType": "string",
+            "colDataType": "string",
+            "isReadOnly": true,
+            "isHidden": false,
+            "isSticky": true,
+            "isColValueDependentOn": ""
+        },
+        {
+            "colDisplayValue": "Absent",
+            "colValue": "absent",
+            "dataType": "boolean",
+            "colDataType": "checkbox",
+            "isReadOnly": false,
+            "isHidden": false,
+            "isSticky": true,
+            "defaultValues": [
+                "YES",
+                "NO"
+            ],
+            "isColValueDependentOn": {
+                "cols": [
+                    "1b9fee9c-15b5-4c07-a0db-ffd8b8e70866",
+                    "25af2d4f-29f5-4448-88e1-461d80300265",
+                    "28b86db7-a0ea-4f0e-847d-ca73b4c129d5",
+                    "3de1c95e-881e-4cf0-aa89-8bc1e476e4c2",
+                    "3ea06eb4-7a11-4ffc-9239-bccc03cdcdf6",
+                    "40cc07cc-20d9-46df-a697-08e3d23a13cd",
+                    "464aeb4b-b4a9-4699-943c-2e01fa417fc3",
+                    "4a005078-bab4-4a71-b6a6-0e006057f388",
+                    "4cd7c158-c679-4fe4-84dc-214f20a75d14",
+                    "4d7fe279-03af-43f6-ba1e-7cb2c98fbf0f",
+                    "6e57b4f0-b0bd-42c9-85e0-9a3e12a340bc",
+                    "9baf1675-cc73-4e7d-8e96-994d68f0c7dc",
+                    "a9a206cf-fbd4-420c-8523-59ee07f9e1a4",
+                    "dc62bf44-d6a2-47c4-b043-679a7ab4c5e5",
+                    "remarks"
+                ]
+            }
+        },
+        {
+            "colDisplayValue": "Q1 | 1M",
+            "colValue": "1b9fee9c-15b5-4c07-a0db-ffd8b8e70866",
+            "dataType": "number",
+            "colDataType": "comboboxes",
+            "isReadOnly": false,
+            "isHidden": false,
+            "isSticky": false,
+            "defaultValues": [
+                0,
+                0.5,
+                1
+            ],
+            "isColValueDependentOn": ""
+        },
+        {
+            "colDisplayValue": "Q2 | 1M",
+            "colValue": "25af2d4f-29f5-4448-88e1-461d80300265",
+            "dataType": "number",
+            "colDataType": "comboboxes",
+            "isReadOnly": false,
+            "isHidden": false,
+            "isSticky": false,
+            "defaultValues": [
+                0,
+                0.5,
+                1
+            ],
+            "isColValueDependentOn": ""
+        },
+        {
+            "colDisplayValue": "Q3 | 1M",
+            "colValue": "28b86db7-a0ea-4f0e-847d-ca73b4c129d5",
+            "dataType": "number",
+            "colDataType": "comboboxes",
+            "isReadOnly": false,
+            "isHidden": false,
+            "isSticky": false,
+            "defaultValues": [
+                0,
+                0.5,
+                1
+            ],
+            "isColValueDependentOn": ""
+        },
+        {
+            "colDisplayValue": "Q4 | 1M",
+            "colValue": "3de1c95e-881e-4cf0-aa89-8bc1e476e4c2",
+            "dataType": "number",
+            "colDataType": "comboboxes",
+            "isReadOnly": false,
+            "isHidden": false,
+            "isSticky": false,
+            "defaultValues": [
+                0,
+                0.5,
+                1
+            ],
+            "isColValueDependentOn": ""
+        },
+        {
+            "colDisplayValue": "Q5 | 1M",
+            "colValue": "3ea06eb4-7a11-4ffc-9239-bccc03cdcdf6",
+            "dataType": "number",
+            "colDataType": "comboboxes",
+            "isReadOnly": false,
+            "isHidden": false,
+            "isSticky": false,
+            "defaultValues": [
+                0,
+                0.5,
+                1
+            ],
+            "isColValueDependentOn": ""
+        },
+        {
+            "colDisplayValue": "Q6 | 1M",
+            "colValue": "40cc07cc-20d9-46df-a697-08e3d23a13cd",
+            "dataType": "number",
+            "colDataType": "comboboxes",
+            "isReadOnly": false,
+            "isHidden": false,
+            "isSticky": false,
+            "defaultValues": [
+                0,
+                0.5,
+                1
+            ],
+            "isColValueDependentOn": ""
+        },
+        {
+            "colDisplayValue": "Q7 | 1M",
+            "colValue": "464aeb4b-b4a9-4699-943c-2e01fa417fc3",
+            "dataType": "number",
+            "colDataType": "comboboxes",
+            "isReadOnly": false,
+            "isHidden": false,
+            "isSticky": false,
+            "defaultValues": [
+                0,
+                0.5,
+                1
+            ],
+            "isColValueDependentOn": ""
+        },
+        {
+            "colDisplayValue": "Q8 | 1M",
+            "colValue": "4a005078-bab4-4a71-b6a6-0e006057f388",
+            "dataType": "number",
+            "colDataType": "comboboxes",
+            "isReadOnly": false,
+            "isHidden": false,
+            "isSticky": false,
+            "defaultValues": [
+                0,
+                0.5,
+                1
+            ],
+            "isColValueDependentOn": ""
+        },
+        {
+            "colDisplayValue": "Q9 | 1M",
+            "colValue": "4cd7c158-c679-4fe4-84dc-214f20a75d14",
+            "dataType": "number",
+            "colDataType": "comboboxes",
+            "isReadOnly": false,
+            "isHidden": false,
+            "isSticky": false,
+            "defaultValues": [
+                0,
+                0.5,
+                1
+            ],
+            "isColValueDependentOn": ""
+        },
+        {
+            "colDisplayValue": "Q10 | 1M",
+            "colValue": "4d7fe279-03af-43f6-ba1e-7cb2c98fbf0f",
+            "dataType": "number",
+            "colDataType": "comboboxes",
+            "isReadOnly": false,
+            "isHidden": false,
+            "isSticky": false,
+            "defaultValues": [
+                0,
+                0.5,
+                1
+            ],
+            "isColValueDependentOn": ""
+        },
+        {
+            "colDisplayValue": "Q11 | 1M",
+            "colValue": "6e57b4f0-b0bd-42c9-85e0-9a3e12a340bc",
+            "dataType": "number",
+            "colDataType": "comboboxes",
+            "isReadOnly": false,
+            "isHidden": false,
+            "isSticky": false,
+            "defaultValues": [
+                0,
+                0.5,
+                1
+            ],
+            "isColValueDependentOn": ""
+        },
+        {
+            "colDisplayValue": "Q12 | 1M",
+            "colValue": "9baf1675-cc73-4e7d-8e96-994d68f0c7dc",
+            "dataType": "number",
+            "colDataType": "comboboxes",
+            "isReadOnly": false,
+            "isHidden": false,
+            "isSticky": false,
+            "defaultValues": [
+                0,
+                0.5,
+                1
+            ],
+            "isColValueDependentOn": ""
+        },
+        {
+            "colDisplayValue": "Q13 | 1M",
+            "colValue": "a9a206cf-fbd4-420c-8523-59ee07f9e1a4",
+            "dataType": "number",
+            "colDataType": "comboboxes",
+            "isReadOnly": false,
+            "isHidden": false,
+            "isSticky": false,
+            "defaultValues": [
+                0,
+                0.5,
+                1
+            ],
+            "isColValueDependentOn": ""
+        },
+        {
+            "colDisplayValue": "Q14 | 1M",
+            "colValue": "dc62bf44-d6a2-47c4-b043-679a7ab4c5e5",
+            "dataType": "number",
+            "colDataType": "comboboxes",
+            "isReadOnly": false,
+            "isHidden": false,
+            "isSticky": false,
+            "defaultValues": [
+                0,
+                0.5,
+                1
+            ],
+            "isColValueDependentOn": ""
+        },
+        {
+            "colDisplayValue": "Remarks",
+            "colValue": "remarks",
+            "dataType": "string",
+            "colDataType": "string",
+            "isReadOnly": false,
+            "isHidden": false,
+            "isSticky": false,
+            "isColValueDependentOn": ""
+        }
+    ],
+    "data": [
+        {
+            "1b9fee9c-15b5-4c07-a0db-ffd8b8e70866": 0.5,
+            "25af2d4f-29f5-4448-88e1-461d80300265": 1,
+            "28b86db7-a0ea-4f0e-847d-ca73b4c129d5": null,
+            "3de1c95e-881e-4cf0-aa89-8bc1e476e4c2": 1,
+            "3ea06eb4-7a11-4ffc-9239-bccc03cdcdf6": 0.5,
+            "40cc07cc-20d9-46df-a697-08e3d23a13cd": 0.5,
+            "464aeb4b-b4a9-4699-943c-2e01fa417fc3": 0.5,
+            "4a005078-bab4-4a71-b6a6-0e006057f388": 0.5,
+            "4cd7c158-c679-4fe4-84dc-214f20a75d14": 1,
+            "4d7fe279-03af-43f6-ba1e-7cb2c98fbf0f": 0.5,
+            "6e57b4f0-b0bd-42c9-85e0-9a3e12a340bc": 1,
+            "9baf1675-cc73-4e7d-8e96-994d68f0c7dc": 0.5,
+            "a9a206cf-fbd4-420c-8523-59ee07f9e1a4": 0.5,
+            "dc62bf44-d6a2-47c4-b043-679a7ab4c5e5": 1,
+            "srNo": 1,
+            "studentId": "8a3d3b10-132d-422c-ba21-480826397fb7",
+            "seatNo": "100",
+            "remarks": "testing2",
+            "absent": "NO"
+        },
+        {
+            "1b9fee9c-15b5-4c07-a0db-ffd8b8e70866": 0.5,
+            "25af2d4f-29f5-4448-88e1-461d80300265": 0.5,
+            "28b86db7-a0ea-4f0e-847d-ca73b4c129d5": 0.5,
+            "3de1c95e-881e-4cf0-aa89-8bc1e476e4c2": 0.5,
+            "3ea06eb4-7a11-4ffc-9239-bccc03cdcdf6": 0.5,
+            "40cc07cc-20d9-46df-a697-08e3d23a13cd": 0.5,
+            "464aeb4b-b4a9-4699-943c-2e01fa417fc3": 0.5,
+            "4a005078-bab4-4a71-b6a6-0e006057f388": 0.5,
+            "4cd7c158-c679-4fe4-84dc-214f20a75d14": 0.5,
+            "4d7fe279-03af-43f6-ba1e-7cb2c98fbf0f": 0.5,
+            "6e57b4f0-b0bd-42c9-85e0-9a3e12a340bc": 0.5,
+            "9baf1675-cc73-4e7d-8e96-994d68f0c7dc": 0.5,
+            "a9a206cf-fbd4-420c-8523-59ee07f9e1a4": 0.5,
+            "dc62bf44-d6a2-47c4-b043-679a7ab4c5e5": 0.5,
+            "srNo": 2,
+            "studentId": "b264626e-23f7-42ef-87f4-cc11cce46f3b",
+            "seatNo": null,
+            "remarks": "0.5 testing",
+            "absent": "NO"
+        },
+        {
+            "1b9fee9c-15b5-4c07-a0db-ffd8b8e70866": null,
+            "25af2d4f-29f5-4448-88e1-461d80300265": null,
+            "28b86db7-a0ea-4f0e-847d-ca73b4c129d5": null,
+            "3de1c95e-881e-4cf0-aa89-8bc1e476e4c2": null,
+            "3ea06eb4-7a11-4ffc-9239-bccc03cdcdf6": null,
+            "40cc07cc-20d9-46df-a697-08e3d23a13cd": null,
+            "464aeb4b-b4a9-4699-943c-2e01fa417fc3": null,
+            "4a005078-bab4-4a71-b6a6-0e006057f388": null,
+            "4cd7c158-c679-4fe4-84dc-214f20a75d14": null,
+            "4d7fe279-03af-43f6-ba1e-7cb2c98fbf0f": null,
+            "6e57b4f0-b0bd-42c9-85e0-9a3e12a340bc": null,
+            "9baf1675-cc73-4e7d-8e96-994d68f0c7dc": null,
+            "a9a206cf-fbd4-420c-8523-59ee07f9e1a4": null,
+            "dc62bf44-d6a2-47c4-b043-679a7ab4c5e5": 1,
+            "srNo": 3,
+            "studentId": "7e98c601-255d-4166-a34b-3eaf3cb682c3",
+            "seatNo": null,
+            "remarks": null,
+            "absent": null
+        },
+        {
+            "1b9fee9c-15b5-4c07-a0db-ffd8b8e70866": null,
+            "25af2d4f-29f5-4448-88e1-461d80300265": null,
+            "28b86db7-a0ea-4f0e-847d-ca73b4c129d5": null,
+            "3de1c95e-881e-4cf0-aa89-8bc1e476e4c2": null,
+            "3ea06eb4-7a11-4ffc-9239-bccc03cdcdf6": null,
+            "40cc07cc-20d9-46df-a697-08e3d23a13cd": null,
+            "464aeb4b-b4a9-4699-943c-2e01fa417fc3": null,
+            "4a005078-bab4-4a71-b6a6-0e006057f388": null,
+            "4cd7c158-c679-4fe4-84dc-214f20a75d14": null,
+            "4d7fe279-03af-43f6-ba1e-7cb2c98fbf0f": null,
+            "6e57b4f0-b0bd-42c9-85e0-9a3e12a340bc": null,
+            "9baf1675-cc73-4e7d-8e96-994d68f0c7dc": null,
+            "a9a206cf-fbd4-420c-8523-59ee07f9e1a4": null,
+            "dc62bf44-d6a2-47c4-b043-679a7ab4c5e5": null,
+            "srNo": 4,
+            "studentId": "d1c3fb39-1dc8-4699-86a1-3157121918ca",
+            "seatNo": "1",
+            "remarks": null,
+            "absent": null
+        },
+        {
+            "1b9fee9c-15b5-4c07-a0db-ffd8b8e70866": null,
+            "25af2d4f-29f5-4448-88e1-461d80300265": null,
+            "28b86db7-a0ea-4f0e-847d-ca73b4c129d5": null,
+            "3de1c95e-881e-4cf0-aa89-8bc1e476e4c2": null,
+            "3ea06eb4-7a11-4ffc-9239-bccc03cdcdf6": null,
+            "40cc07cc-20d9-46df-a697-08e3d23a13cd": null,
+            "464aeb4b-b4a9-4699-943c-2e01fa417fc3": null,
+            "4a005078-bab4-4a71-b6a6-0e006057f388": null,
+            "4cd7c158-c679-4fe4-84dc-214f20a75d14": null,
+            "4d7fe279-03af-43f6-ba1e-7cb2c98fbf0f": null,
+            "6e57b4f0-b0bd-42c9-85e0-9a3e12a340bc": null,
+            "9baf1675-cc73-4e7d-8e96-994d68f0c7dc": null,
+            "a9a206cf-fbd4-420c-8523-59ee07f9e1a4": null,
+            "dc62bf44-d6a2-47c4-b043-679a7ab4c5e5": null,
+            "srNo": 5,
+            "studentId": "4e119262-8b91-4335-a758-283a52206e19",
+            "seatNo": "2",
+            "remarks": null,
+            "absent": null
+        },
+        {
+            "1b9fee9c-15b5-4c07-a0db-ffd8b8e70866": null,
+            "25af2d4f-29f5-4448-88e1-461d80300265": null,
+            "28b86db7-a0ea-4f0e-847d-ca73b4c129d5": null,
+            "3de1c95e-881e-4cf0-aa89-8bc1e476e4c2": null,
+            "3ea06eb4-7a11-4ffc-9239-bccc03cdcdf6": null,
+            "40cc07cc-20d9-46df-a697-08e3d23a13cd": null,
+            "464aeb4b-b4a9-4699-943c-2e01fa417fc3": null,
+            "4a005078-bab4-4a71-b6a6-0e006057f388": null,
+            "4cd7c158-c679-4fe4-84dc-214f20a75d14": null,
+            "4d7fe279-03af-43f6-ba1e-7cb2c98fbf0f": null,
+            "6e57b4f0-b0bd-42c9-85e0-9a3e12a340bc": null,
+            "9baf1675-cc73-4e7d-8e96-994d68f0c7dc": null,
+            "a9a206cf-fbd4-420c-8523-59ee07f9e1a4": null,
+            "dc62bf44-d6a2-47c4-b043-679a7ab4c5e5": null,
+            "srNo": 6,
+            "studentId": "8f84dc9d-c54e-4231-a4d8-b9624580fd87",
+            "seatNo": "1",
+            "remarks": null,
+            "absent": null
+        },
+        {
+            "1b9fee9c-15b5-4c07-a0db-ffd8b8e70866": null,
+            "25af2d4f-29f5-4448-88e1-461d80300265": null,
+            "28b86db7-a0ea-4f0e-847d-ca73b4c129d5": null,
+            "3de1c95e-881e-4cf0-aa89-8bc1e476e4c2": null,
+            "3ea06eb4-7a11-4ffc-9239-bccc03cdcdf6": null,
+            "40cc07cc-20d9-46df-a697-08e3d23a13cd": null,
+            "464aeb4b-b4a9-4699-943c-2e01fa417fc3": null,
+            "4a005078-bab4-4a71-b6a6-0e006057f388": null,
+            "4cd7c158-c679-4fe4-84dc-214f20a75d14": null,
+            "4d7fe279-03af-43f6-ba1e-7cb2c98fbf0f": null,
+            "6e57b4f0-b0bd-42c9-85e0-9a3e12a340bc": null,
+            "9baf1675-cc73-4e7d-8e96-994d68f0c7dc": null,
+            "a9a206cf-fbd4-420c-8523-59ee07f9e1a4": null,
+            "dc62bf44-d6a2-47c4-b043-679a7ab4c5e5": null,
+            "srNo": 7,
+            "studentId": "5b186f1d-0d34-46d7-a7b3-5284ebe3fc4c",
+            "seatNo": "1",
+            "remarks": "Absent kid",
+            "absent": "NO"
+        }
+    ]
+}

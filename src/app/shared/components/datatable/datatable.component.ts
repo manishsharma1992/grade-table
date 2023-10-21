@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange, SimpleChanges, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { MatPaginator } from '@angular/material/paginator';
@@ -25,6 +25,7 @@ export class DatatableComponent implements OnChanges {
   gridData!: MatTableDataSource<any>;
   gridForm!: FormGroup;
   gridFormValueAt: any;
+  simpleChange: SimpleChange = new SimpleChange(null, null, false);
 
   constructor(public formBuilder: FormBuilder) { }
   
@@ -91,18 +92,36 @@ export class DatatableComponent implements OnChanges {
   }
 
   onDropdownChange(value: any, column: any, gridFormElement: any, i: number) {
-    if(!this.gridFormValueAt) this.gridFormValueAt = gridFormElement.get('gridRows')?.value[i];
+    if(!this.simpleChange.firstChange) {
+      this.simpleChange = {
+        previousValue: this.gridFormValueAt = gridFormElement.get('gridRows')?.value[i],
+        currentValue: null,
+        firstChange: true,
+        isFirstChange: () => true
+      }
+    }
+    else {
+      let tempPrevValue = this.simpleChange.previousValue;
+      this.simpleChange = {
+        previousValue: tempPrevValue,
+        currentValue: this.gridFormValueAt = gridFormElement.get('gridRows')?.value[i],
+        firstChange: false,
+        isFirstChange: () => false
+      }
+    }
+
     gridFormElement.get('gridRows').at(i).get(column.colValue).patchValue(value);
     if(column.isColValueDependentOn && column.isColValueDependentOn.cols) {
-      if(column.dataType === 'boolean' && value === 'TRUE') {
+      if(column.dataType === 'boolean' && String(value).trim().toUpperCase() === 'YES') {
         if(Array.isArray(column.isColValueDependentOn.cols)) {
           column.isColValueDependentOn.cols.forEach((ele: any) => {
             gridFormElement.get('gridRows').at(i).get(String(ele)).patchValue(null);
           })
         }
       }
-      else if(column.dataType === 'boolean' && value === 'FALSE') {
-        for(const [key, value] of Object.entries(this.gridFormValueAt)) {
+      else if(column.dataType === 'boolean' && String(value).trim().toUpperCase() === 'NO') {
+        delete this.simpleChange.previousValue['absent'];
+        for(const [key, value] of Object.entries(this.simpleChange.previousValue)) {
           gridFormElement.get('gridRows').at(i).get(String(key)).patchValue(value);
         }
       }

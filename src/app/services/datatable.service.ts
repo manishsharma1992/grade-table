@@ -28,7 +28,7 @@ export class DatatableService {
   }
 
   getMarksObtained(): Observable<any> {
-    return this.http.get('../../assets/resources/marks-obtained.json', {
+    return this.http.get('../../assets/resources/marks-obtained-2.json', {
       headers: new HttpHeaders({'Content-Type': 'application/json'})
     })
   }
