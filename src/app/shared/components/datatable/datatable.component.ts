@@ -124,6 +124,7 @@ export class DatatableComponent implements OnChanges {
         for(const [key, value] of Object.entries(this.simpleChange.previousValue)) {
           gridFormElement.get('gridRows').at(i).get(String(key)).patchValue(value);
         }
+        this.simpleChange = new SimpleChange(null, null, false);
       }
     }
   }
